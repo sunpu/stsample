@@ -23,6 +23,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -35,7 +36,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout_2;
-    QLabel *lblPic;
+    MaskLabel *lblPic;
     QLabel *lblName;
     QSpacerItem *horizontalSpacer_2;
     QWidget *widget_2;
@@ -53,25 +54,19 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_5;
     QLabel *label_5;
-    QLabel *label_6;
+    QLabel *lblTelephone;
     QSpacerItem *horizontalSpacer_6;
     QWidget *widget_8;
     QHBoxLayout *horizontalLayout_6;
     QSpacerItem *horizontalSpacer_9;
     QLabel *label_9;
-    QLabel *label_10;
+    QLabel *lblEmail;
     QSpacerItem *horizontalSpacer_10;
-    QWidget *widget_7;
-    QHBoxLayout *horizontalLayout_5;
-    QSpacerItem *horizontalSpacer_7;
-    QLabel *label_7;
-    QLabel *label_8;
-    QSpacerItem *horizontalSpacer_8;
     QWidget *widget_9;
     QHBoxLayout *horizontalLayout_7;
     QSpacerItem *horizontalSpacer_11;
     QLabel *label_11;
-    QLabel *lblSubscription;
+    QLabel *lblDescription;
     QSpacerItem *horizontalSpacer_12;
     QWidget *widget_6;
     QHBoxLayout *horizontalLayout_2;
@@ -99,7 +94,7 @@ public:
     {
         if (STContactDetailClass->objectName().isEmpty())
             STContactDetailClass->setObjectName(QStringLiteral("STContactDetailClass"));
-        STContactDetailClass->resize(685, 581);
+        STContactDetailClass->resize(685, 579);
         STContactDetailClass->setStyleSheet(QStringLiteral("border:0px;"));
         verticalLayout = new QVBoxLayout(STContactDetailClass);
         verticalLayout->setSpacing(0);
@@ -121,7 +116,7 @@ public:
         verticalLayout_2 = new QVBoxLayout(widget_3);
         verticalLayout_2->setSpacing(10);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        lblPic = new QLabel(widget_3);
+        lblPic = new MaskLabel(widget_3);
         lblPic->setObjectName(QStringLiteral("lblPic"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(80);
@@ -129,7 +124,7 @@ public:
         sizePolicy.setHeightForWidth(lblPic->sizePolicy().hasHeightForWidth());
         lblPic->setSizePolicy(sizePolicy);
         lblPic->setMinimumSize(QSize(80, 80));
-        lblPic->setStyleSheet(QStringLiteral("border-image: url(:/STSample/Resources/images/logo.jpg);"));
+        lblPic->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_2->addWidget(lblPic);
 
@@ -264,15 +259,15 @@ public:
 
         horizontalLayout_4->addWidget(label_5);
 
-        label_6 = new QLabel(widget_5);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setMinimumSize(QSize(200, 30));
-        label_6->setMaximumSize(QSize(200, 30));
-        label_6->setFont(font2);
-        label_6->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
-        label_6->setAlignment(Qt::AlignCenter);
+        lblTelephone = new QLabel(widget_5);
+        lblTelephone->setObjectName(QStringLiteral("lblTelephone"));
+        lblTelephone->setMinimumSize(QSize(200, 30));
+        lblTelephone->setMaximumSize(QSize(200, 30));
+        lblTelephone->setFont(font2);
+        lblTelephone->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
+        lblTelephone->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_4->addWidget(label_6);
+        horizontalLayout_4->addWidget(lblTelephone);
 
         horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -300,15 +295,15 @@ public:
 
         horizontalLayout_6->addWidget(label_9);
 
-        label_10 = new QLabel(widget_8);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setMinimumSize(QSize(200, 30));
-        label_10->setMaximumSize(QSize(200, 30));
-        label_10->setFont(font2);
-        label_10->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
-        label_10->setAlignment(Qt::AlignCenter);
+        lblEmail = new QLabel(widget_8);
+        lblEmail->setObjectName(QStringLiteral("lblEmail"));
+        lblEmail->setMinimumSize(QSize(200, 30));
+        lblEmail->setMaximumSize(QSize(200, 30));
+        lblEmail->setFont(font2);
+        lblEmail->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
+        lblEmail->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_6->addWidget(label_10);
+        horizontalLayout_6->addWidget(lblEmail);
 
         horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -316,42 +311,6 @@ public:
 
 
         verticalLayout_3->addWidget(widget_8);
-
-        widget_7 = new QWidget(twDetail);
-        widget_7->setObjectName(QStringLiteral("widget_7"));
-        horizontalLayout_5 = new QHBoxLayout(widget_7);
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_7);
-
-        label_7 = new QLabel(widget_7);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setMinimumSize(QSize(100, 30));
-        label_7->setMaximumSize(QSize(100, 30));
-        label_7->setFont(font2);
-        label_7->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
-        label_7->setAlignment(Qt::AlignCenter);
-
-        horizontalLayout_5->addWidget(label_7);
-
-        label_8 = new QLabel(widget_7);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setMinimumSize(QSize(200, 30));
-        label_8->setMaximumSize(QSize(200, 30));
-        label_8->setFont(font2);
-        label_8->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
-        label_8->setAlignment(Qt::AlignCenter);
-
-        horizontalLayout_5->addWidget(label_8);
-
-        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_8);
-
-
-        verticalLayout_3->addWidget(widget_7);
 
         widget_9 = new QWidget(twDetail);
         widget_9->setObjectName(QStringLiteral("widget_9"));
@@ -372,15 +331,15 @@ public:
 
         horizontalLayout_7->addWidget(label_11);
 
-        lblSubscription = new QLabel(widget_9);
-        lblSubscription->setObjectName(QStringLiteral("lblSubscription"));
-        lblSubscription->setMinimumSize(QSize(200, 30));
-        lblSubscription->setMaximumSize(QSize(200, 30));
-        lblSubscription->setFont(font2);
-        lblSubscription->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
-        lblSubscription->setAlignment(Qt::AlignCenter);
+        lblDescription = new QLabel(widget_9);
+        lblDescription->setObjectName(QStringLiteral("lblDescription"));
+        lblDescription->setMinimumSize(QSize(200, 30));
+        lblDescription->setMaximumSize(QSize(200, 30));
+        lblDescription->setFont(font2);
+        lblDescription->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
+        lblDescription->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_7->addWidget(lblSubscription);
+        horizontalLayout_7->addWidget(lblDescription);
 
         horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -584,17 +543,15 @@ public:
     {
         STContactDetailClass->setWindowTitle(QApplication::translate("STContactDetailClass", "STContactDetail", 0));
         lblPic->setText(QString());
-        lblName->setText(QApplication::translate("STContactDetailClass", "Sunix", 0));
+        lblName->setText(QString());
         label_3->setText(QApplication::translate("STContactDetailClass", "\350\264\246\343\200\200\345\217\267\357\274\232", 0));
-        lblJid->setText(QApplication::translate("STContactDetailClass", "13951651032", 0));
-        label_5->setText(QApplication::translate("STContactDetailClass", "\346\200\247\343\200\200\345\210\253\357\274\232", 0));
-        label_6->setText(QApplication::translate("STContactDetailClass", "\347\224\267", 0));
-        label_9->setText(QApplication::translate("STContactDetailClass", "\345\271\264\343\200\200\351\276\204\357\274\232", 0));
-        label_10->setText(QApplication::translate("STContactDetailClass", "18", 0));
-        label_7->setText(QApplication::translate("STContactDetailClass", "\345\234\260\343\200\200\345\214\272\357\274\232", 0));
-        label_8->setText(QApplication::translate("STContactDetailClass", "\344\270\255\345\233\275\343\200\200\346\261\237\350\213\217\343\200\200\345\215\227\344\272\254", 0));
+        lblJid->setText(QString());
+        label_5->setText(QApplication::translate("STContactDetailClass", "\346\211\213\346\234\272\345\217\267\357\274\232", 0));
+        lblTelephone->setText(QString());
+        label_9->setText(QApplication::translate("STContactDetailClass", "\351\202\256\343\200\200\347\256\261\357\274\232", 0));
+        lblEmail->setText(QString());
         label_11->setText(QApplication::translate("STContactDetailClass", "\347\255\276\343\200\200\345\220\215\357\274\232", 0));
-        lblSubscription->setText(QApplication::translate("STContactDetailClass", "I'll be there", 0));
+        lblDescription->setText(QString());
         pbSendMessage->setText(QApplication::translate("STContactDetailClass", "\345\217\221\351\200\201\346\266\210\346\201\257", 0));
         pbOpenClass->setText(QApplication::translate("STContactDetailClass", "\344\270\264\346\227\266\346\225\231\345\256\244", 0));
         tabWidget->setTabText(tabWidget->indexOf(twDetail), QApplication::translate("STContactDetailClass", "\344\277\241\346\201\257", 0));

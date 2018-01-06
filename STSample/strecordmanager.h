@@ -4,6 +4,8 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QDataStream>
+#include <QDir>
+#include <QDirIterator>
 #include "stcommon.h"
 
 using namespace tahiti;
@@ -14,7 +16,7 @@ namespace tahiti
 	{
 
 	public:
-		STRecordManager(QString jid);
+		STRecordManager(QString otherJid);
 		~STRecordManager();
 		bool isRecordExist();
 		void removeRecord();

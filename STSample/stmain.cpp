@@ -25,8 +25,7 @@ STMain::STMain(XmppClient* client) : m_xmppClient(client)
 	ui.leContactSearch->setTextMargins(13 + 8 + 2, 0, 0, 0);
 	ui.leContactSearch->setContentsMargins(0, 0, 0, 0);
 	ui.leContactSearch->setLayout(mainLayout);
-	//ui.lineEdit->setStyleSheet("height:29px;border:1px solid #eaeaea;border-radius:14px;");
-	ui.leContactSearch->setStyleSheet("border:1px solid gray;");
+	ui.leContactSearch->setStyleSheet("border:1px solid #eaeaea;");
 
 	// 初始化左侧工具栏
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat_on.png);}");
@@ -42,6 +41,12 @@ STMain::STMain(XmppClient* client) : m_xmppClient(client)
 	ui.lblFriend->installEventFilter(this);
 	ui.widContactTitle->installEventFilter(this);
 	ui.lblFriendNum->installEventFilter(this);
+	ui.widTitle->installEventFilter(this);
+	ui.lblUserPic->installEventFilter(this);
+
+	m_personalInfo = new STPersonalInfo(m_xmppClient);
+	connect(m_personalInfo, SIGNAL(updateSelfPic(QString)), this, SLOT(updateSelfPic(QString)));
+	ui.pgPersonalInfo->layout()->addWidget(m_personalInfo);
 }
 
 STMain::~STMain()
@@ -201,7 +206,12 @@ void STMain::init()
 {
 	// 初始化本人信息
 	UserInfo selfInfo = m_xmppClient->getSelfInfo();
-	QImage* image = new QImage(selfInfo.photoPath);
+	QString path = selfInfo.photoPath;
+	if (!QFile::exists(path))
+	{
+		path = ":/STSample/Resources/images/account.png";
+	}
+	QImage* image = new QImage(path);
 	ui.lblUserPic->setPixmap(QPixmap::fromImage(*image).scaled(45, 45));
 
 	// 初始化聊天
@@ -376,6 +386,18 @@ void STMain::deleteChat(QString jid)
 	recordManager->removeRecord();
 }
 
+void STMain::updateSelfPic(QString picPath)
+{
+	QImage* image = new QImage(picPath);
+	ui.lblUserPic->setPixmap(QPixmap::fromImage(*image).scaled(45, 45));
+
+	QList<STChatDetail*>::Iterator it;
+	for (it = m_chatDetailList.begin(); it != m_chatDetailList.end(); it++)
+	{
+		(*it)->updateSelfPic(picPath);
+	}
+}
+
 void STMain::on_lwContactList_itemDoubleClicked()
 {
 	QListWidgetItem* item;
@@ -391,6 +413,7 @@ void STMain::on_lwContactList_itemDoubleClicked()
 void STMain::on_pbChat_clicked()
 {
 	ui.swMain->setCurrentIndex(0);
+	ui.widSearch->setVisible(true);
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat_on.png);}");
 	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/contact_focus.png);}");
@@ -405,6 +428,7 @@ void STMain::on_pbChat_clicked()
 void STMain::on_pbContact_clicked()
 {
 	ui.swMain->setCurrentIndex(1);
+	ui.widSearch->setVisible(true);
 	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact_on.png);}");
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/chat_focus.png);}");
@@ -465,7 +489,7 @@ void STMain::on_pbRelogin_clicked()
 	Q_EMIT changeLoginWindow();
 }
 
-void STMain::mousePressEvent(QMouseEvent *event)
+void STMain::mousePressEvent(QMouseEvent* event)
 {
 	if (event->button() == Qt::LeftButton)
 	{
@@ -484,28 +508,51 @@ void STMain::mouseMoveEvent(QMouseEvent* event)
 		this->move(pos.x(), pos.y());
 	}
 }
-void STMain::mouseReleaseEvent(QMouseEvent *event)
+
+void STMain::mouseReleaseEvent(QMouseEvent* event)
 {
 	m_isPressed = false;
 }
 
-bool STMain::eventFilter(QObject *obj, QEvent *e)
+bool STMain::eventFilter(QObject* obj, QEvent* e)
 {
-	if (e->type() == QEvent::MouseButtonPress && (ui.lblDirect == obj
-		|| ui.lblFriend == obj || ui.widContactTitle == obj || ui.lblFriendNum == obj))
+	if (e->type() == QEvent::MouseButtonPress)
 	{
-		bool visible = ui.lwContactList->isVisible();
-		visible = !visible;
-		ui.lwContactList->setVisible(visible);
-		if (visible)
+		if (ui.lblDirect == obj || ui.lblFriend == obj
+			|| ui.widContactTitle == obj || ui.lblFriendNum == obj)
 		{
-			ui.lblDirect->setStyleSheet("border-image:url(:/STSample/Resources/images/down.png);");
+			bool visible = ui.lwContactList->isVisible();
+			visible = !visible;
+			ui.lwContactList->setVisible(visible);
+			if (visible)
+			{
+				ui.lblDirect->setStyleSheet("border-image:url(:/STSample/Resources/images/down.png);");
+			}
+			else
+			{
+				ui.lblDirect->setStyleSheet("border-image:url(:/STSample/Resources/images/right.png);");
+			}
+			return true;
+		}
+		else if (ui.lblUserPic == obj)
+		{
+			m_personalInfo->initPersonalInfo();
+			ui.widSearch->setVisible(false);
+			ui.swMain->setCurrentIndex(2);
+			ui.lblChatTitle->clear();
+			ui.widTitle->setStyleSheet("QWidget{border-bottom:1px solid #e3e3e3;background-color:#ffffff;}");
+		}
+	}
+	else if (e->type() == QEvent::MouseButtonDblClick && ui.widTitle == obj)
+	{
+		if (ui.pbNormal->isVisible())
+		{
+			on_pbNormal_clicked();
 		}
 		else
 		{
-			ui.lblDirect->setStyleSheet("border-image:url(:/STSample/Resources/images/right.png);");
+			on_pbMaximum_clicked();
 		}
-		return true;
 	}
 	return false;
 }

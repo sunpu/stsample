@@ -22,6 +22,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -45,7 +46,7 @@ public:
     QWidget *widget_7;
     QVBoxLayout *verticalLayout_4;
     QSpacerItem *verticalSpacer_2;
-    QLabel *lblUserPic;
+    MaskLabel *lblUserPic;
     QSpacerItem *verticalSpacer_3;
     QSpacerItem *horizontalSpacer_4;
     QWidget *widBottom;
@@ -161,6 +162,7 @@ public:
         widget_2->setObjectName(QStringLiteral("widget_2"));
         horizontalLayout_6 = new QHBoxLayout(widget_2);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_6->setContentsMargins(-1, 0, -1, -1);
         horizontalSpacer_3 = new QSpacerItem(98, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_6->addItem(horizontalSpacer_3);
@@ -173,11 +175,11 @@ public:
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
-        lblUserPic = new QLabel(widget_7);
+        lblUserPic = new MaskLabel(widget_7);
         lblUserPic->setObjectName(QStringLiteral("lblUserPic"));
         lblUserPic->setMinimumSize(QSize(100, 100));
         lblUserPic->setMaximumSize(QSize(100, 100));
-        lblUserPic->setStyleSheet(QStringLiteral("border-image: url(:/STSample/Resources/images/account.png);"));
+        lblUserPic->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_4->addWidget(lblUserPic);
 
@@ -223,7 +225,7 @@ public:
         label = new QLabel(widget_8);
         label->setObjectName(QStringLiteral("label"));
         label->setFont(font);
-        label->setStyleSheet(QStringLiteral(""));
+        label->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_7->addWidget(label);
 
@@ -277,6 +279,7 @@ public:
         label_2 = new QLabel(widget_10);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setFont(font);
+        label_2->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_8->addWidget(label_2);
 
@@ -320,7 +323,7 @@ public:
         cbRemeberPasswd->setFont(font3);
         cbRemeberPasswd->setStyleSheet(QLatin1String("QCheckBox {\n"
 "    spacing: 5px;\n"
-"	color: #555555;\n"
+"	color: rgb(67, 69, 85);\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -351,7 +354,7 @@ public:
         cbAutoLogin->setLayoutDirection(Qt::LeftToRight);
         cbAutoLogin->setStyleSheet(QLatin1String("QCheckBox {\n"
 "    spacing: 5px;\n"
-"	color: #555555;\n"
+"	color: rgb(67, 69, 85);\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -384,14 +387,14 @@ public:
         pbLogin->setObjectName(QStringLiteral("pbLogin"));
         pbLogin->setMinimumSize(QSize(0, 35));
         pbLogin->setMaximumSize(QSize(16777215, 35));
-        pbLogin->setStyleSheet(QString::fromUtf8("\n"
+        pbLogin->setFont(font2);
+        pbLogin->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	color: rgb(255, 255, 255);\n"
-"	font:11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
-"QPushButton:hover:!pressed {\n"
+"QPushButton:hover {\n"
 "	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
 "}"));
 
@@ -437,6 +440,7 @@ public:
         verticalLayout->setStretch(1, 11);
 
         retranslateUi(STLoginClass);
+        QObject::connect(leUserName, SIGNAL(textChanged(QString)), STLoginClass, SLOT(onUserNameChanged()));
 
         QMetaObject::connectSlotsByName(STLoginClass);
     } // setupUi

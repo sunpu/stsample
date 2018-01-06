@@ -28,6 +28,9 @@ void STContactDetail::setContactDetail(UserInfo userInfo)
 
 	ui.lblJid->setText(userInfo.jid);
 	ui.lblName->setText(userInfo.userName);
+	ui.lblTelephone->setText(userInfo.telephone);
+	ui.lblEmail->setText(userInfo.email);
+	ui.lblDescription->setText(userInfo.description);
 
 	QString path = userInfo.photoPath;
 	if (path.size() == 0)

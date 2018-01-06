@@ -2,10 +2,10 @@
 
 using namespace tahiti;
 
-STRecordManager::STRecordManager(QString jid)
+STRecordManager::STRecordManager(QString otherJid)
 {
 	QString path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-		+ DATA_ROOT_PATH + RECORD_PATH + jid + RECORD_FILE_TYPE;
+		+ DATA_ROOT_PATH + RECORD_PATH + otherJid + RECORD_FILE_TYPE;
 	m_recordFilePath = path;
 	m_recordFile = new QFile(path);
 }
@@ -32,7 +32,7 @@ void STRecordManager::writeRecordItem(RecordItem item)
 	if (item.time.size() > 0)
 	{
 		QDataStream out(m_recordFile);
-		out << item.time << (qint32)item.from << item.pic
+		out << item.time << (qint32)item.from
 			<< (qint32)item.type << item.content;
 	}
 	m_recordFile->close();
@@ -49,7 +49,7 @@ QList<RecordItem> STRecordManager::getRecordItemList()
 		RecordItem recordItem;
 		qint32 from;
 		qint32 type;
-		readDataStream >> recordItem.time >> from >> recordItem.pic
+		readDataStream >> recordItem.time >> from
 			>> type >> recordItem.content;
 		recordItem.from = (MessageFrom)from;
 		recordItem.type = (MessageType)type;

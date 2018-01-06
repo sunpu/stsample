@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,7 +29,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QWidget *widget_2;
     QGridLayout *gridLayout;
-    QLabel *lblContactPic;
+    MaskLabel *lblContactPic;
     QWidget *widget_3;
     QHBoxLayout *horizontalLayout_2;
     QLabel *lblContactName;
@@ -53,11 +54,11 @@ public:
         gridLayout->setSpacing(2);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(2, 2, 2, 2);
-        lblContactPic = new QLabel(widget_2);
+        lblContactPic = new MaskLabel(widget_2);
         lblContactPic->setObjectName(QStringLiteral("lblContactPic"));
         lblContactPic->setMinimumSize(QSize(36, 36));
         lblContactPic->setMaximumSize(QSize(36, 36));
-        lblContactPic->setStyleSheet(QStringLiteral("border-image: url(:/STSample/Resources/images/account.png);"));
+        lblContactPic->setStyleSheet(QStringLiteral(""));
 
         gridLayout->addWidget(lblContactPic, 0, 0, 1, 1);
 

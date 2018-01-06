@@ -47,6 +47,9 @@ namespace tahiti
 		QString jid;
 		QString userName;
 		QString photoPath;
+		QString telephone;
+		QString email;
+		QString description;
 	} UserInfo;
 
 	typedef struct recordItem

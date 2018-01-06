@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>653</width>
-    <height>135</height>
+    <height>123</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -99,21 +99,21 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="lblChatRecordPicOther">
+             <widget class="MaskLabel" name="lblChatRecordPicOther">
               <property name="minimumSize">
                <size>
-                <width>36</width>
-                <height>36</height>
+                <width>30</width>
+                <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>36</width>
-                <height>36</height>
+                <width>30</width>
+                <height>30</height>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/STSample/Resources/images/logo.jpg);</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -314,21 +314,21 @@ p, li { white-space: pre-wrap; }
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="lblChatRecordPicSelf">
+             <widget class="MaskLabel" name="lblChatRecordPicSelf">
               <property name="minimumSize">
                <size>
-                <width>36</width>
-                <height>36</height>
+                <width>30</width>
+                <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>36</width>
-                <height>36</height>
+                <width>30</width>
+                <height>30</height>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/STSample/Resources/images/logo.jpg);</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -359,6 +359,13 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MaskLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">masklabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="stsample.qrc"/>
  </resources>

@@ -13,6 +13,7 @@
 #include "xmppregister.h"
 #include "stconfig.h"
 #include "stmain.h"
+#include "stload.h"
 
 using namespace tahiti;
 
@@ -26,7 +27,11 @@ namespace tahiti
 		STLogin(XmppClient* client);
 		~STLogin();
 		void initLoginData();
+		static void* loadProc(void* args);
+		void emitChangeMainWindow();
+		void setLoadStatus(bool status);
 		public Q_SLOTS:
+		void onUserNameChanged();
 		void on_pbLogin_clicked();
 		void on_pb2Regist_clicked();
 		void on_pbMinimum_clicked();
@@ -46,6 +51,9 @@ namespace tahiti
 		bool m_isPressed;
 		QPoint m_startMovePos;
 		XmppClient* m_xmppClient;
+		STLoad* m_load;
+		pthread_t m_tidLoad;
+		QString m_currentUser;
 	};
 
 	class STRegist : public QWidget

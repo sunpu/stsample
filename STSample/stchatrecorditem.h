@@ -17,6 +17,7 @@ namespace tahiti
 	public:
 		STChatRecordItem(RecordItem item);
 		~STChatRecordItem();
+		void updateSelfPic(QString picPath);
 		QSize getItemSize();
 	private:
 	private:

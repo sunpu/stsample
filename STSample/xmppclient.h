@@ -10,6 +10,8 @@
 #include <QDataStream>
 #include <QList>
 #include <QStandardPaths>
+#include <QFileInfo>
+#include <QDirIterator>
 #include "gloox/registration.h"
 #include "gloox/vcardhandler.h"
 #include "gloox/vcardmanager.h"
@@ -35,6 +37,7 @@
 #include "json/json.h"
 #include "pthread/pthread.h"
 #include "stcommon.h"
+#include "stconfig.h"
 
 using namespace std;
 using namespace gloox;
@@ -86,7 +89,8 @@ namespace tahiti
 		UserInfo getSelfInfo();
 		void modifyPasswd(QString password);
 		void queryVCard(QString jid);
-		void modifyVCard();
+		void modifyVCard(UserInfo userInfo);
+		void modifySelfPic(QString picFile);
 		bool subscribeOther(QString jid);
 		bool unsubscribeOther(QString jid);
 		/*string deviceName(string deviceName);
@@ -153,6 +157,7 @@ namespace tahiti
 		QString m_xmppPasswd;
 		QString m_xmppServerIP;
 		string m_xmppID;
+		QString m_xmppTempPasswd;
 		string m_xmppKeepalive;
 		int m_keepaliveInterval;
 		int m_keepaliveCount;
@@ -162,6 +167,7 @@ namespace tahiti
 		int m_requestId;
 		bool m_needLogin;
 		VCard* m_current_vcard;
+		VCard* m_self_vcard;
 		QList<UserInfo> m_friendList;
 		QMap<QString, MessageSession*> m_sessionMap;
 		UserInfo m_selfInfo;

@@ -70,6 +70,12 @@ STChatRecordItem::~STChatRecordItem()
 
 }
 
+void STChatRecordItem::updateSelfPic(QString picPath)
+{
+	QImage* image = new QImage(picPath);
+	ui.lblChatRecordPicSelf->setPixmap(QPixmap::fromImage(*image).scaled(36, 36));
+}
+
 QSize STChatRecordItem::getItemSize()
 {
 	return QSize(m_width, m_height);

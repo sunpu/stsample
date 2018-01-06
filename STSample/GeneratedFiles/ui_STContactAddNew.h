@@ -21,6 +21,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -44,7 +45,7 @@ public:
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
-    QLabel *lblPic;
+    MaskLabel *lblPic;
     QSpacerItem *horizontalSpacer_2;
     QWidget *widget_17;
     QHBoxLayout *horizontalLayout_15;
@@ -153,8 +154,6 @@ public:
 
         horizontalLayout_14->addWidget(label_2);
 
-        label_2->raise();
-        label_2->raise();
 
         verticalLayout_5->addWidget(widget);
 
@@ -174,7 +173,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        lblPic = new QLabel(widget_2);
+        lblPic = new MaskLabel(widget_2);
         lblPic->setObjectName(QStringLiteral("lblPic"));
         lblPic->setMinimumSize(QSize(80, 80));
         lblPic->setMaximumSize(QSize(80, 80));

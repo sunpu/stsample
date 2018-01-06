@@ -25,6 +25,7 @@ namespace tahiti
 		void clearChatDetail();
 		void setChatDetail(UserInfo userInfo);
 		UserInfo getUserInfo();
+		void updateSelfPic(QString picPath);
 		public Q_SLOTS:
 		void on_pbSendMessage_clicked();
 		void updateOthersMessage(QString jid, QString msg);
@@ -38,6 +39,9 @@ namespace tahiti
 		UserInfo m_userInfo;
 		XmppClient* m_xmppClient;
 		UserInfo m_selfInfo;
+		QList<STChatRecordItem*> m_recordItemList;
+		QString m_selfPicPath;
+		QString m_otherPicPath;
 	};
 }
 #endif

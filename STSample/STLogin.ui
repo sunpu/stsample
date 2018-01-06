@@ -198,6 +198,9 @@ QPushButton:hover:!pressed {
       <item>
        <widget class="QWidget" name="widget_2" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
          <item>
           <spacer name="horizontalSpacer_3">
            <property name="orientation">
@@ -228,7 +231,7 @@ QPushButton:hover:!pressed {
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="lblUserPic">
+             <widget class="MaskLabel" name="lblUserPic">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -242,7 +245,7 @@ QPushButton:hover:!pressed {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/STSample/Resources/images/account.png);</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -363,7 +366,7 @@ QPushButton:hover:!pressed {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">color: rgb(67, 69, 85);</string>
               </property>
               <property name="text">
                <string>　账　号　</string>
@@ -487,6 +490,9 @@ QPushButton:hover:!pressed {
                 <pointsize>10</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(67, 69, 85);</string>
+              </property>
               <property name="text">
                <string>　密　码　</string>
               </property>
@@ -578,7 +584,7 @@ QPushButton:hover:!pressed {
            <property name="styleSheet">
             <string notr="true">QCheckBox {
     spacing: 5px;
-	color: #555555;
+	color: rgb(67, 69, 85);
 }
 
 QCheckBox::indicator {
@@ -633,7 +639,7 @@ QCheckBox::indicator:checked {
            <property name="styleSheet">
             <string notr="true">QCheckBox {
     spacing: 5px;
-	color: #555555;
+	color: rgb(67, 69, 85);
 }
 
 QCheckBox::indicator {
@@ -691,15 +697,20 @@ QCheckBox::indicator:checked {
              <height>35</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">
 
 QPushButton {
 	color: rgb(255, 255, 255);
-	font:11pt &quot;微软雅黑&quot;;
 	border-image: url(:/STSample/Resources/images/green.png);
 }
-QPushButton:hover:!pressed {
+QPushButton:hover {
 	border-image: url(:/STSample/Resources/images/green_focus.png);
 }</string>
            </property>
@@ -770,8 +781,35 @@ QPushButton:hover:!pressed {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MaskLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">masklabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="stsample.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>leUserName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>STLoginClass</receiver>
+   <slot>onUserNameChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>-18</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onUserNameChanged()</slot>
+ </slots>
 </ui>

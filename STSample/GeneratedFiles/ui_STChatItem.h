@@ -20,6 +20,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,7 +30,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QWidget *widget_2;
     QGridLayout *gridLayout;
-    QLabel *lblChatPic;
+    MaskLabel *lblChatPic;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout;
     QWidget *widget;
@@ -58,11 +59,11 @@ public:
         gridLayout->setSpacing(2);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(2, 2, 2, 2);
-        lblChatPic = new QLabel(widget_2);
+        lblChatPic = new MaskLabel(widget_2);
         lblChatPic->setObjectName(QStringLiteral("lblChatPic"));
         lblChatPic->setMinimumSize(QSize(36, 36));
         lblChatPic->setMaximumSize(QSize(36, 36));
-        lblChatPic->setStyleSheet(QStringLiteral("border-image: url(:/STSample/Resources/images/account.png);"));
+        lblChatPic->setStyleSheet(QStringLiteral(""));
 
         gridLayout->addWidget(lblChatPic, 0, 0, 1, 1);
 

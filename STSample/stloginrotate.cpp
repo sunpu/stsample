@@ -12,6 +12,10 @@ STLogin::STLogin(XmppClient* client) : m_xmppClient(client)
 
 	ui.leUserName->installEventFilter(this);
 	ui.lePasswd->installEventFilter(this);
+
+	m_load = new STLoad(this);
+	m_load->move(QPoint((width() - 120) / 2, (height() - 120) / 2));
+	m_load->hide();
 }
 
 STLogin::~STLogin()
@@ -27,6 +31,7 @@ void STLogin::initLoginData()
 	bool autoLogin = (STConfig::getConfig("/config/autoLogin") == "true") ? true : false;
 	ui.cbAutoLogin->setChecked(autoLogin);
 
+	m_currentUser = STConfig::getConfig("/xmpp/user");
 	ui.leUserName->setText(STConfig::getConfig("/xmpp/user"));
 	if (rememberPasswd)
 	{
@@ -37,14 +42,66 @@ void STLogin::initLoginData()
 		ui.lePasswd->setText("");
 	}
 
-	QString jid = STConfig::getConfig("/xmpp/user") + QString("@localhost");
+	QString userName = STConfig::getConfig("/xmpp/user");
 	QString path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-		+ DATA_ROOT_PATH + AVATAR_PATH + jid + QString(".jpg");
-	if (QFile::exists(path))
+		+ DATA_ROOT_PATH + AVATAR_PATH;
+	QString picFilePath;
+	QDir dir;
+	dir.setPath(path);
+	QDirIterator iter(dir, QDirIterator::Subdirectories);
+	while (iter.hasNext())
 	{
-		QImage* image = new QImage(path);
-		ui.lblUserPic->setPixmap(QPixmap::fromImage(*image).scaled(100, 100));
+		iter.next();
+		QFileInfo info = iter.fileInfo();
+		if (info.isFile() && info.fileName().split("@")[0] == userName)
+		{
+			picFilePath = path + info.fileName();
+			break;
+		}
 	}
+	if (picFilePath.size() == 0)
+	{
+		picFilePath = ":/STSample/Resources/images/account.png";
+	}
+	QImage* image = new QImage(picFilePath);
+	ui.lblUserPic->setPixmap(QPixmap::fromImage(*image).scaled(100, 100));
+}
+
+void STLogin::onUserNameChanged()
+{
+	if (ui.leUserName->text() == m_currentUser &&
+		STConfig::getConfig("/config/rememberPasswd") == "true")
+	{
+		ui.lePasswd->setText(STConfig::getConfig("/xmpp/passwd"));
+	}
+	else
+	{
+		ui.lePasswd->clear();
+	}
+
+	QString path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
+		+ DATA_ROOT_PATH + AVATAR_PATH;
+	QString picFilePath;
+	QDir dir;
+	dir.setPath(path);
+	QDirIterator iter(dir, QDirIterator::Subdirectories);
+	while (iter.hasNext())
+	{
+		iter.next();
+		QFileInfo info = iter.fileInfo();
+		if (info.isFile() && info.fileName().split("@")[0] == ui.leUserName->text())
+		{
+			picFilePath = path + info.fileName();
+			break;
+		}
+	}
+	if (picFilePath.size() == 0)
+	{
+		picFilePath = ":/STSample/Resources/images/account.png";
+	}
+	QImage* image = new QImage(picFilePath);
+	ui.lblUserPic->setPixmap(QPixmap::fromImage(*image).scaled(100, 100));
+	
 }
 
 void STLogin::on_pbLogin_clicked()
@@ -61,6 +118,7 @@ void STLogin::on_pbLogin_clicked()
 
 	m_xmppClient->setXmppAccount(user, passwd, server);
 	m_xmppClient->run();
+	setLoadStatus(true);
 }
 
 void STLogin::handleLoginResult(bool result)
@@ -86,15 +144,50 @@ void STLogin::handleLoginResult(bool result)
 		// 查询用户花名册
 		m_xmppClient->queryRoster();
 
-		QThread::sleep(3);
-
-		// 窗口切换
-		Q_EMIT changeMainWindow();
+		pthread_create(&m_tidLoad, NULL, loadProc, this);
 	}
 	else
 	{
 		// TODO:登录失败，报错
+		setLoadStatus(false);
 	}
+}
+
+void STLogin::setLoadStatus(bool status)
+{
+	if (status)
+	{
+		m_load->show();
+		ui.pbLogin->setStyleSheet("QPushButton{color:rgb(255, 255, 255);border-image:url(:/STSample/Resources/images/green_focus.png);}");
+	}
+	else
+	{
+		m_load->hide();
+		ui.pbLogin->setStyleSheet("QPushButton{color:rgb(255, 255, 255);border-image:url(:/STSample/Resources/images/green.png);}"
+			"QPushButton:hover{border-image:url(:/STSample/Resources/images/green_focus.png);}");
+	}
+	ui.cbAutoLogin->setEnabled(!status);
+	ui.cbRemeberPasswd->setEnabled(!status);
+	ui.leUserName->setEnabled(!status);
+	ui.lePasswd->setEnabled(!status);
+	ui.pbLogin->setEnabled(!status);
+	ui.pb2Regist->setEnabled(!status);
+}
+
+void* STLogin::loadProc(void* args)
+{
+	STLogin* login = (STLogin*)args;
+
+	QThread::sleep(2);
+	// 窗口切换
+	login->changeMainWindow();
+
+	return NULL;
+}
+
+void STLogin::emitChangeMainWindow()
+{
+	Q_EMIT changeMainWindow();
 }
 
 void STLogin::on_pb2Regist_clicked()

@@ -11,6 +11,7 @@
 #include "stcontactitem.h"
 #include "stcontactdetail.h"
 #include "stcontactaddnew.h"
+#include "stpersonalinfo.h"
 #include "stchatitem.h"
 #include "xmppclient.h"
 
@@ -54,10 +55,10 @@ namespace tahiti
 		virtual void mouseMoveEvent(QMouseEvent* event);
 		virtual void mousePressEvent(QMouseEvent* event);
 		virtual void mouseReleaseEvent(QMouseEvent* event);
-		bool eventFilter(QObject *obj, QEvent *e);
+		bool eventFilter(QObject* obj, QEvent* e);
 	private:
 		void paintEvent(QPaintEvent* event);
-		void drawShadow(QPainter &painter);
+		void drawShadow(QPainter& painter);
 
 		void initChatWindow();
 		void initChatData();
@@ -80,6 +81,7 @@ namespace tahiti
 		private Q_SLOTS:
 		void reorderChatList(QString jid);
 		void switchChatWindow(QString jid);
+		void updateSelfPic(QString picPath);
 	private:
 		Ui::STMainClass ui;
 		QPoint mousePosition;
@@ -99,6 +101,7 @@ namespace tahiti
 		QList<STChatDetail*> m_chatDetailList;
 		QList<STContactItem*> m_contactItemList;
 		STContactDetail* m_contactDetail;
+		STPersonalInfo* m_personalInfo;
 	};
 }
 #endif

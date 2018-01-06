@@ -24,18 +24,19 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_STMainClass
 {
 public:
-    QHBoxLayout *horizontalLayout_2;
-    QWidget *widget_3;
+    QHBoxLayout *horizontalLayout_11;
+    QWidget *widToolbar;
     QVBoxLayout *verticalLayout;
-    QWidget *widget_4;
+    QWidget *widUserPic;
     QVBoxLayout *verticalLayout_2;
-    QLabel *lblUserPic;
+    MaskLabel *lblUserPic;
     QWidget *widget_5;
     QGridLayout *gridLayout;
     QPushButton *pbChat;
@@ -46,10 +47,11 @@ public:
     QPushButton *pbMessage;
     QPushButton *pbSetting;
     QSpacerItem *verticalSpacer_6;
+    QWidget *widCenterWindow;
     QVBoxLayout *verticalLayout_4;
     QWidget *widget_10;
     QHBoxLayout *horizontalLayout;
-    QWidget *widget_7;
+    QWidget *widSearch;
     QHBoxLayout *horizontalLayout_5;
     QWidget *widget_9;
     QHBoxLayout *horizontalLayout_4;
@@ -110,47 +112,46 @@ public:
     QHBoxLayout *horizontalLayout_16;
     QWidget *widContactDetail;
     QHBoxLayout *horizontalLayout_14;
+    QWidget *pgPersonalInfo;
+    QHBoxLayout *horizontalLayout_17;
 
     void setupUi(QWidget *STMainClass)
     {
         if (STMainClass->objectName().isEmpty())
             STMainClass->setObjectName(QStringLiteral("STMainClass"));
-        STMainClass->resize(980, 623);
+        STMainClass->resize(1104, 623);
         STMainClass->setMinimumSize(QSize(980, 620));
         STMainClass->setStyleSheet(QStringLiteral(""));
-        horizontalLayout_2 = new QHBoxLayout(STMainClass);
-        horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        widget_3 = new QWidget(STMainClass);
-        widget_3->setObjectName(QStringLiteral("widget_3"));
-        widget_3->setMinimumSize(QSize(65, 0));
-        widget_3->setMaximumSize(QSize(65, 16777215));
-        widget_3->setStyleSheet(QStringLiteral("background-color: #434555;"));
-        verticalLayout = new QVBoxLayout(widget_3);
+        horizontalLayout_11 = new QHBoxLayout(STMainClass);
+        horizontalLayout_11->setSpacing(0);
+        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
+        horizontalLayout_11->setContentsMargins(0, 0, 0, 0);
+        widToolbar = new QWidget(STMainClass);
+        widToolbar->setObjectName(QStringLiteral("widToolbar"));
+        widToolbar->setMinimumSize(QSize(65, 0));
+        widToolbar->setMaximumSize(QSize(65, 16777215));
+        widToolbar->setStyleSheet(QStringLiteral("background-color: #434555;"));
+        verticalLayout = new QVBoxLayout(widToolbar);
         verticalLayout->setSpacing(50);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 10, 0, 0);
-        widget_4 = new QWidget(widget_3);
-        widget_4->setObjectName(QStringLiteral("widget_4"));
-        widget_4->setStyleSheet(QStringLiteral(""));
-        verticalLayout_2 = new QVBoxLayout(widget_4);
+        widUserPic = new QWidget(widToolbar);
+        widUserPic->setObjectName(QStringLiteral("widUserPic"));
+        widUserPic->setStyleSheet(QStringLiteral(""));
+        verticalLayout_2 = new QVBoxLayout(widUserPic);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        lblUserPic = new QLabel(widget_4);
+        lblUserPic = new MaskLabel(widUserPic);
         lblUserPic->setObjectName(QStringLiteral("lblUserPic"));
         lblUserPic->setMinimumSize(QSize(45, 45));
         lblUserPic->setMaximumSize(QSize(45, 45));
-        lblUserPic->setStyleSheet(QLatin1String("\n"
-"QLabel{\n"
-"border-image: url(:/STSample/Resources/images/account.png);\n"
-"}"));
+        lblUserPic->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_2->addWidget(lblUserPic);
 
 
-        verticalLayout->addWidget(widget_4);
+        verticalLayout->addWidget(widUserPic);
 
-        widget_5 = new QWidget(widget_3);
+        widget_5 = new QWidget(widToolbar);
         widget_5->setObjectName(QStringLiteral("widget_5"));
         widget_5->setLayoutDirection(Qt::LeftToRight);
         widget_5->setAutoFillBackground(false);
@@ -195,7 +196,7 @@ public:
 
         verticalLayout->addItem(verticalSpacer_5);
 
-        widget_6 = new QWidget(widget_3);
+        widget_6 = new QWidget(widToolbar);
         widget_6->setObjectName(QStringLiteral("widget_6"));
         gridLayout_2 = new QGridLayout(widget_6);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
@@ -239,29 +240,31 @@ public:
 
         verticalLayout->setStretch(3, 1);
 
-        horizontalLayout_2->addWidget(widget_3);
+        horizontalLayout_11->addWidget(widToolbar);
 
-        verticalLayout_4 = new QVBoxLayout();
+        widCenterWindow = new QWidget(STMainClass);
+        widCenterWindow->setObjectName(QStringLiteral("widCenterWindow"));
+        verticalLayout_4 = new QVBoxLayout(widCenterWindow);
         verticalLayout_4->setSpacing(0);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, -1, -1, -1);
-        widget_10 = new QWidget(STMainClass);
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        widget_10 = new QWidget(widCenterWindow);
         widget_10->setObjectName(QStringLiteral("widget_10"));
         horizontalLayout = new QHBoxLayout(widget_10);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        widget_7 = new QWidget(widget_10);
-        widget_7->setObjectName(QStringLiteral("widget_7"));
-        widget_7->setMinimumSize(QSize(290, 0));
-        widget_7->setMaximumSize(QSize(290, 45));
-        widget_7->setStyleSheet(QLatin1String("QWidget{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}\n"
+        widSearch = new QWidget(widget_10);
+        widSearch->setObjectName(QStringLiteral("widSearch"));
+        widSearch->setMinimumSize(QSize(290, 0));
+        widSearch->setMaximumSize(QSize(290, 45));
+        widSearch->setStyleSheet(QLatin1String("QWidget{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}\n"
 ""));
-        horizontalLayout_5 = new QHBoxLayout(widget_7);
+        horizontalLayout_5 = new QHBoxLayout(widSearch);
         horizontalLayout_5->setSpacing(9);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(9, 9, -1, 9);
-        widget_9 = new QWidget(widget_7);
+        widget_9 = new QWidget(widSearch);
         widget_9->setObjectName(QStringLiteral("widget_9"));
         widget_9->setMaximumSize(QSize(16777215, 24));
         horizontalLayout_4 = new QHBoxLayout(widget_9);
@@ -282,7 +285,7 @@ public:
 
         horizontalLayout_5->addWidget(widget_9);
 
-        pbAddContact = new QPushButton(widget_7);
+        pbAddContact = new QPushButton(widSearch);
         pbAddContact->setObjectName(QStringLiteral("pbAddContact"));
         pbAddContact->setMinimumSize(QSize(24, 24));
         pbAddContact->setMaximumSize(QSize(24, 24));
@@ -297,10 +300,12 @@ public:
         horizontalLayout_5->addWidget(pbAddContact);
 
 
-        horizontalLayout->addWidget(widget_7);
+        horizontalLayout->addWidget(widSearch);
 
         widTitle = new QWidget(widget_10);
         widTitle->setObjectName(QStringLiteral("widTitle"));
+        widTitle->setMinimumSize(QSize(0, 45));
+        widTitle->setMaximumSize(QSize(16777215, 45));
         widTitle->setStyleSheet(QStringLiteral("QWidget{border-bottom: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
         horizontalLayout_10 = new QHBoxLayout(widTitle);
         horizontalLayout_10->setSpacing(0);
@@ -400,8 +405,9 @@ public:
 
         verticalLayout_4->addWidget(widget_10);
 
-        swMain = new QStackedWidget(STMainClass);
+        swMain = new QStackedWidget(widCenterWindow);
         swMain->setObjectName(QStringLiteral("swMain"));
+        swMain->setStyleSheet(QStringLiteral("QWidget#pgPersonalInfo{background-color: rgb(255, 255, 255);}"));
         pgChatWindow = new QWidget();
         pgChatWindow->setObjectName(QStringLiteral("pgChatWindow"));
         horizontalLayout_8 = new QHBoxLayout(pgChatWindow);
@@ -634,16 +640,21 @@ public:
         horizontalLayout_3->addWidget(widContactMainWindow);
 
         swMain->addWidget(pgContactWindow);
+        pgPersonalInfo = new QWidget();
+        pgPersonalInfo->setObjectName(QStringLiteral("pgPersonalInfo"));
+        horizontalLayout_17 = new QHBoxLayout(pgPersonalInfo);
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
+        swMain->addWidget(pgPersonalInfo);
 
         verticalLayout_4->addWidget(swMain);
 
 
-        horizontalLayout_2->addLayout(verticalLayout_4);
+        horizontalLayout_11->addWidget(widCenterWindow);
 
 
         retranslateUi(STMainClass);
 
-        swMain->setCurrentIndex(1);
+        swMain->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(STMainClass);

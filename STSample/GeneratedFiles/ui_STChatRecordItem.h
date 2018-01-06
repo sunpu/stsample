@@ -20,6 +20,7 @@
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <masklabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -34,7 +35,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QWidget *widget_2;
     QVBoxLayout *verticalLayout_2;
-    QLabel *lblChatRecordPicOther;
+    MaskLabel *lblChatRecordPicOther;
     QSpacerItem *verticalSpacer;
     QTextEdit *teMessageOther;
     QSpacerItem *horizontalSpacer_3;
@@ -45,14 +46,14 @@ public:
     QTextEdit *teMessageSelf;
     QWidget *widget_5;
     QVBoxLayout *verticalLayout_3;
-    QLabel *lblChatRecordPicSelf;
+    MaskLabel *lblChatRecordPicSelf;
     QSpacerItem *verticalSpacer_2;
 
     void setupUi(QWidget *STChatRecordItemClass)
     {
         if (STChatRecordItemClass->objectName().isEmpty())
             STChatRecordItemClass->setObjectName(QStringLiteral("STChatRecordItemClass"));
-        STChatRecordItemClass->resize(653, 135);
+        STChatRecordItemClass->resize(653, 123);
         verticalLayout = new QVBoxLayout(STChatRecordItemClass);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         lblTime = new QLabel(STChatRecordItemClass);
@@ -85,11 +86,11 @@ public:
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        lblChatRecordPicOther = new QLabel(widget_2);
+        lblChatRecordPicOther = new MaskLabel(widget_2);
         lblChatRecordPicOther->setObjectName(QStringLiteral("lblChatRecordPicOther"));
-        lblChatRecordPicOther->setMinimumSize(QSize(36, 36));
-        lblChatRecordPicOther->setMaximumSize(QSize(36, 36));
-        lblChatRecordPicOther->setStyleSheet(QStringLiteral("border-image: url(:/STSample/Resources/images/logo.jpg);"));
+        lblChatRecordPicOther->setMinimumSize(QSize(30, 30));
+        lblChatRecordPicOther->setMaximumSize(QSize(30, 30));
+        lblChatRecordPicOther->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_2->addWidget(lblChatRecordPicOther);
 
@@ -172,11 +173,11 @@ public:
         verticalLayout_3->setSpacing(0);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        lblChatRecordPicSelf = new QLabel(widget_5);
+        lblChatRecordPicSelf = new MaskLabel(widget_5);
         lblChatRecordPicSelf->setObjectName(QStringLiteral("lblChatRecordPicSelf"));
-        lblChatRecordPicSelf->setMinimumSize(QSize(36, 36));
-        lblChatRecordPicSelf->setMaximumSize(QSize(36, 36));
-        lblChatRecordPicSelf->setStyleSheet(QStringLiteral("border-image: url(:/STSample/Resources/images/logo.jpg);"));
+        lblChatRecordPicSelf->setMinimumSize(QSize(30, 30));
+        lblChatRecordPicSelf->setMaximumSize(QSize(30, 30));
+        lblChatRecordPicSelf->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_3->addWidget(lblChatRecordPicSelf);
 
