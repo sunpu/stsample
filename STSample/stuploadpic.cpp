@@ -8,7 +8,7 @@ STUploadPic::STUploadPic(QWidget * parent) : QDialog(parent)
 	QString path = ":/STSample/Resources/images/account.png";
 	QImage* image = new QImage(path);
 	ui.lblPic->setPixmap(QPixmap::fromImage(*image).scaled(80, 80));
-	this->setWindowFlags(Qt::FramelessWindowHint); //去掉标题栏
+	setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 }
 
 STUploadPic::~STUploadPic()

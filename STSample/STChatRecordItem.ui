@@ -155,6 +155,7 @@
            </property>
            <property name="styleSheet">
             <string notr="true">QTextEdit {
+	border-radius: 3px;
     border-image: url(:/STSample/Resources/images/bubble_left.png);  /* The border image                    */
     border-top-width: 2px;
     border-right-width: 5px;
@@ -260,6 +261,7 @@ p, li { white-space: pre-wrap; }
            </property>
            <property name="styleSheet">
             <string notr="true">QTextEdit {
+	border-radius: 3px;
     border-image: url(:/STSample/Resources/images/bubble_right.png);  /* The border image                    */
     border-top-width: 2px;
     border-right-width: 2px;

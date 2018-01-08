@@ -79,7 +79,9 @@ public:
         if (STContactAddNewClass->objectName().isEmpty())
             STContactAddNewClass->setObjectName(QStringLiteral("STContactAddNewClass"));
         STContactAddNewClass->resize(626, 454);
-        STContactAddNewClass->setStyleSheet(QStringLiteral("QWidget {background-color: #ffffff;}"));
+        STContactAddNewClass->setStyleSheet(QLatin1String("QWidget {background-color: #ffffff;}\n"
+"\n"
+"QWidget#STContactAddNewClass{border-right: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-bottom: 1px solid #e3e3e3;}"));
         verticalLayout = new QVBoxLayout(STContactAddNewClass);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         widSearch = new QWidget(STContactAddNewClass);
@@ -111,6 +113,7 @@ public:
         pbSearch->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
@@ -315,6 +318,7 @@ public:
         pbAddNew->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"

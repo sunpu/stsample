@@ -55,10 +55,11 @@ public:
     MaskLabel *lblPic;
     QSpacerItem *horizontalSpacer_6;
     QSpacerItem *verticalSpacer;
-    QHBoxLayout *hboxLayout;
-    QSpacerItem *spacerItem;
+    QHBoxLayout *hblayout;
+    QSpacerItem *horizontalSpacer_8;
     QPushButton *pbOK;
     QPushButton *pbCancel;
+    QSpacerItem *horizontalSpacer_7;
 
     void setupUi(QDialog *STUploadPicClass)
     {
@@ -67,7 +68,7 @@ public:
         STUploadPicClass->resize(320, 420);
         STUploadPicClass->setMinimumSize(QSize(320, 420));
         STUploadPicClass->setMaximumSize(QSize(320, 420));
-        STUploadPicClass->setStyleSheet(QStringLiteral("QDialog {background-color: #ffffff;}"));
+        STUploadPicClass->setStyleSheet(QStringLiteral("QDialog {background-color: #ffffff;border: 1px solid #e3e3e3;}"));
         verticalLayout = new QVBoxLayout(STUploadPicClass);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -143,6 +144,7 @@ public:
         pbUpload->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
@@ -229,13 +231,13 @@ public:
 
         verticalLayout->addWidget(widget);
 
-        hboxLayout = new QHBoxLayout();
-        hboxLayout->setSpacing(10);
-        hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
-        hboxLayout->setContentsMargins(10, 10, 20, 20);
-        spacerItem = new QSpacerItem(131, 31, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        hblayout = new QHBoxLayout();
+        hblayout->setSpacing(50);
+        hblayout->setObjectName(QStringLiteral("hblayout"));
+        hblayout->setContentsMargins(10, 10, 10, 20);
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        hboxLayout->addItem(spacerItem);
+        hblayout->addItem(horizontalSpacer_8);
 
         pbOK = new QPushButton(STUploadPicClass);
         pbOK->setObjectName(QStringLiteral("pbOK"));
@@ -245,6 +247,7 @@ public:
         pbOK->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
@@ -255,7 +258,7 @@ public:
 "	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
 "}"));
 
-        hboxLayout->addWidget(pbOK);
+        hblayout->addWidget(pbOK);
 
         pbCancel = new QPushButton(STUploadPicClass);
         pbCancel->setObjectName(QStringLiteral("pbCancel"));
@@ -265,6 +268,7 @@ public:
         pbCancel->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/red.png);\n"
 "}\n"
@@ -275,10 +279,14 @@ public:
 "	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
 "}"));
 
-        hboxLayout->addWidget(pbCancel);
+        hblayout->addWidget(pbCancel);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        hblayout->addItem(horizontalSpacer_7);
 
 
-        verticalLayout->addLayout(hboxLayout);
+        verticalLayout->addLayout(hblayout);
 
 
         retranslateUi(STUploadPicClass);

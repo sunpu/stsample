@@ -6,7 +6,6 @@
 #include <QPainter>
 #include <QPropertyAnimation>
 #include <QMouseEvent>
-#include <QtMath>
 #include "ui_STLogin.h"
 #include "ui_STRegist.h"
 #include "xmppclient.h"
@@ -28,7 +27,6 @@ namespace tahiti
 		~STLogin();
 		void initLoginData();
 		static void* loadProc(void* args);
-		void emitChangeMainWindow();
 		void setLoadStatus(bool status);
 		public Q_SLOTS:
 		void onUserNameChanged();
@@ -107,7 +105,6 @@ namespace tahiti
 		void onRotateWindow();
 		// 窗口旋转结束;
 		void onRotateFinished();
-		void drawShadow(QPainter &painter);
 
 	private:
 		// 当前窗口是否正在旋转;

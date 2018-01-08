@@ -115,7 +115,6 @@ void STLogin::on_pbLogin_clicked()
 
 	QString user = ui.leUserName->text();
 	QString passwd = ui.lePasswd->text();
-
 	m_xmppClient->setXmppAccount(user, passwd, server);
 	m_xmppClient->run();
 	setLoadStatus(true);
@@ -181,13 +180,7 @@ void* STLogin::loadProc(void* args)
 	QThread::sleep(2);
 	// 窗口切换
 	login->changeMainWindow();
-
 	return NULL;
-}
-
-void STLogin::emitChangeMainWindow()
-{
-	Q_EMIT changeMainWindow();
 }
 
 void STLogin::on_pb2Regist_clicked()
@@ -373,13 +366,11 @@ STLoginRotate::STLoginRotate(XmppClient* client)
 {
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowMinimizeButtonHint);
 	this->setAttribute(Qt::WA_TranslucentBackground);
+
 	// 给窗口设置rotateValue属性;
 	this->setProperty("rotateValue", 0);
 
 	initRotateWindow();
-
-	m_mainWindow = new STMain(m_xmppClient);
-	connect(m_mainWindow, SIGNAL(changeLoginWindow()), this, SLOT(onChangeLoginWindow()));
 }
 
 STLoginRotate::~STLoginRotate()
@@ -474,39 +465,14 @@ void STLoginRotate::paintEvent(QPaintEvent* event)
 	}
 	else
 	{
-		/*QPainter painter(this);
-		this->drawShadow(painter);
-		painter.setPen(Qt::NoPen);
-		painter.setBrush(Qt::white);
-		painter.drawRect(QRect(SHADOW_WIDTH, SHADOW_WIDTH, this->width() - 2 * SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH));*/
 		return __super::paintEvent(event);
 	}
 }
 
-void STLoginRotate::drawShadow(QPainter &painter)
-{
-	QList<QPixmap> pixmaps;
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_left.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_right.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_top.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_bottom.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_left_top.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_right_top.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_left_bottom.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_right_bottom.png"));
-	painter.drawPixmap(0, 0, SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[4]);
-	painter.drawPixmap(this->width(), 0, SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[5]);
-	painter.drawPixmap(0, this->height(), SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[6]);
-	painter.drawPixmap(this->width(), this->height(), SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[7]);
-	painter.drawPixmap(0, 0, SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH, pixmaps[0].scaled(SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH));
-	painter.drawPixmap(this->width(), 0, SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH, pixmaps[1].scaled(SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH));
-	painter.drawPixmap(0, 0, this->width(), SHADOW_WIDTH, pixmaps[2].scaled(this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH));
-	painter.drawPixmap(0, this->height(), this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[3].scaled(this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH));
-
-}
-
 void STLoginRotate::onChangeMainWindow()
 {
+	m_mainWindow = new STMain(m_xmppClient);
+	connect(m_mainWindow, SIGNAL(changeLoginWindow()), this, SLOT(onChangeLoginWindow()));
 	m_mainWindow->init();
 	this->hide();
 	m_mainWindow->show();
@@ -514,7 +480,10 @@ void STLoginRotate::onChangeMainWindow()
 
 void STLoginRotate::onChangeLoginWindow()
 {
-	m_mainWindow->destroy();
 	m_mainWindow->hide();
+	m_mainWindow->destroy();
+	m_mainWindow = NULL;
+	m_loginWindow->setLoadStatus(false);
+	m_xmppClient->logout();
 	this->show();
 }

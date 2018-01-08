@@ -176,7 +176,7 @@
             <string notr="true">color:rgb(147, 147, 147);</string>
            </property>
            <property name="text">
-            <string>1:28</string>
+            <string/>
            </property>
           </widget>
          </item>

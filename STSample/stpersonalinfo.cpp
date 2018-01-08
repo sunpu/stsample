@@ -124,7 +124,7 @@ bool STPersonalInfo::eventFilter(QObject* obj, QEvent* e)
 		}
 		else if (e->type() == QEvent::MouseButtonPress)
 		{
-			STUploadPic* uploadPic = new STUploadPic();
+			STUploadPic* uploadPic = new STUploadPic(this);
 			connect(uploadPic, SIGNAL(uploadPic(QString)), this, SLOT(uploadPicFinished(QString)));
 			uploadPic->setGeometry(mapToGlobal(pos()).x() + (width() - uploadPic->width()) / 2,
 				mapToGlobal(pos()).y() + (height() - uploadPic->height()) / 2,

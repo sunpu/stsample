@@ -307,8 +307,8 @@ void tahiti::STRegist::rotateWindow()
     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 struct qt_meta_stringdata_tahiti__STLoginRotate_t {
-    QByteArrayData data[9];
-    char stringdata0[123];
+    QByteArrayData data[6];
+    char stringdata0[94];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -322,16 +322,12 @@ QT_MOC_LITERAL(1, 22, 18), // "onChangeMainWindow"
 QT_MOC_LITERAL(2, 41, 0), // ""
 QT_MOC_LITERAL(3, 42, 19), // "onChangeLoginWindow"
 QT_MOC_LITERAL(4, 62, 14), // "onRotateWindow"
-QT_MOC_LITERAL(5, 77, 16), // "onRotateFinished"
-QT_MOC_LITERAL(6, 94, 10), // "drawShadow"
-QT_MOC_LITERAL(7, 105, 9), // "QPainter&"
-QT_MOC_LITERAL(8, 115, 7) // "painter"
+QT_MOC_LITERAL(5, 77, 16) // "onRotateFinished"
 
     },
     "tahiti::STLoginRotate\0onChangeMainWindow\0"
     "\0onChangeLoginWindow\0onRotateWindow\0"
-    "onRotateFinished\0drawShadow\0QPainter&\0"
-    "painter"
+    "onRotateFinished"
 };
 #undef QT_MOC_LITERAL
 
@@ -341,7 +337,7 @@ static const uint qt_meta_data_tahiti__STLoginRotate[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -349,18 +345,16 @@ static const uint qt_meta_data_tahiti__STLoginRotate[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x08 /* Private */,
-       3,    0,   40,    2, 0x08 /* Private */,
-       4,    0,   41,    2, 0x08 /* Private */,
-       5,    0,   42,    2, 0x08 /* Private */,
-       6,    1,   43,    2, 0x08 /* Private */,
+       1,    0,   34,    2, 0x08 /* Private */,
+       3,    0,   35,    2, 0x08 /* Private */,
+       4,    0,   36,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 7,    8,
 
        0        // eod
 };
@@ -375,10 +369,10 @@ void tahiti::STLoginRotate::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 1: _t->onChangeLoginWindow(); break;
         case 2: _t->onRotateWindow(); break;
         case 3: _t->onRotateFinished(); break;
-        case 4: _t->drawShadow((*reinterpret_cast< QPainter(*)>(_a[1]))); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject tahiti::STLoginRotate::staticMetaObject = {
@@ -406,13 +400,13 @@ int tahiti::STLoginRotate::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 4;
     }
     return _id;
 }

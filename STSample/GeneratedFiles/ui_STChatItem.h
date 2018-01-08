@@ -133,7 +133,7 @@ public:
         STChatItemClass->setWindowTitle(QApplication::translate("STChatItemClass", "STChatItem", 0));
         lblChatPic->setText(QString());
         lblChatName->setText(QString());
-        lblTime->setText(QApplication::translate("STChatItemClass", "1:28", 0));
+        lblTime->setText(QString());
         lblChatPreview->setText(QString());
     } // retranslateUi
 

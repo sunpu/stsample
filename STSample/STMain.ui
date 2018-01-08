@@ -308,6 +308,9 @@ QPushButton:hover:!pressed {
    </item>
    <item>
     <widget class="QWidget" name="widCenterWindow" native="true">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <property name="spacing">
        <number>0</number>
@@ -326,6 +329,9 @@ QPushButton:hover:!pressed {
       </property>
       <item>
        <widget class="QWidget" name="widget_10" native="true">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="spacing">
           <number>0</number>
@@ -357,7 +363,7 @@ QPushButton:hover:!pressed {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QWidget{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}
+            <string notr="true">QWidget{border-bottom: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}
 </string>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -476,7 +482,7 @@ QPushButton:hover:!pressed {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QWidget{border-bottom: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
+            <string notr="true">QWidget#widTitle{border-bottom: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_10">
             <property name="spacing">
@@ -666,7 +672,7 @@ QPushButton:hover:!pressed {
       <item>
        <widget class="QStackedWidget" name="swMain">
         <property name="styleSheet">
-         <string notr="true">QWidget#pgPersonalInfo{background-color: rgb(255, 255, 255);}</string>
+         <string notr="true"/>
         </property>
         <property name="currentIndex">
          <number>0</number>
@@ -728,7 +734,7 @@ QPushButton:hover:!pressed {
                 <enum>Qt::NoFocus</enum>
                </property>
                <property name="styleSheet">
-                <string notr="true">QListWidget{border:0px;border-right:1px solid #e3e3e3;}
+                <string notr="true">QListWidget{border:0px;border-right:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;}
 QListWidget::Item{height:60px;padding-top:0px; padding-bottom:0px;}
 QListWidget::Item:hover{background:#ececec; }
 QListWidget::item:selected{background:#ececec; }</string>
@@ -762,7 +768,8 @@ QListWidget::item:selected{background:#ececec; }</string>
              <item>
               <widget class="QWidget" name="widChatBlank" native="true">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">
+QWidget#widChatBlank{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_7">
                 <property name="spacing">
@@ -909,7 +916,7 @@ QListWidget::item:selected{background:#ececec; }</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">QWidget#widget{border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
+             <string notr="true">QWidget#widget{border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <property name="spacing">
@@ -1063,7 +1070,8 @@ QListWidget::item:selected{background:#ececec; }</string>
              <item>
               <widget class="QWidget" name="widContactBlank" native="true">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">
+QWidget#widContactBlank{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_6">
                 <property name="spacing">
@@ -1173,7 +1181,8 @@ QListWidget::item:selected{background:#ececec; }</string>
              <item>
               <widget class="QWidget" name="widContactAddNew" native="true">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">
+QWidget#widContactAddNew{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_16">
                 <property name="leftMargin">
@@ -1218,6 +1227,10 @@ QListWidget::item:selected{background:#ececec; }</string>
          </layout>
         </widget>
         <widget class="QWidget" name="pgPersonalInfo">
+         <property name="styleSheet">
+          <string notr="true">QWidget#pgPersonalInfo{background-color: rgb(255, 255, 255);border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;}
+</string>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_17"/>
         </widget>
        </widget>

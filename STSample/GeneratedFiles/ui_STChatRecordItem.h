@@ -112,6 +112,7 @@ public:
         font1.setWeight(50);
         teMessageOther->setFont(font1);
         teMessageOther->setStyleSheet(QLatin1String("QTextEdit {\n"
+"	border-radius: 3px;\n"
 "    border-image: url(:/STSample/Resources/images/bubble_left.png);  /* The border image                    */\n"
 "    border-top-width: 2px;\n"
 "    border-right-width: 5px;\n"
@@ -151,6 +152,7 @@ public:
         teMessageSelf->setMaximumSize(QSize(207, 16777215));
         teMessageSelf->setFont(font1);
         teMessageSelf->setStyleSheet(QLatin1String("QTextEdit {\n"
+"	border-radius: 3px;\n"
 "    border-image: url(:/STSample/Resources/images/bubble_right.png);  /* The border image                    */\n"
 "    border-top-width: 2px;\n"
 "    border-right-width: 2px;\n"

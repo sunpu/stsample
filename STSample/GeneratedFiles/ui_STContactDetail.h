@@ -153,7 +153,11 @@ public:
 
         widget_2 = new QWidget(STContactDetailClass);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        widget_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        widget_2->setStyleSheet(QLatin1String("\n"
+"\n"
+"QWidget{background-color: rgb(255, 255, 255);}\n"
+"QWidget#widget_2{border-right: 1px solid #e3e3e3;}\n"
+""));
         gridLayout = new QGridLayout(widget_2);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setHorizontalSpacing(0);
@@ -165,7 +169,9 @@ public:
         font1.setPointSize(11);
         tabWidget->setFont(font1);
         tabWidget->setAutoFillBackground(false);
-        tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget::pane{border-width:0px;}\n"
+        tabWidget->setStyleSheet(QString::fromUtf8("\n"
+"QTabWidget::pane{border-bottom: 1px solid #e3e3e3;\n"
+"border-right: 1px solid #e3e3e3;}\n"
 "\n"
 "QTabWidget::tab-bar{alignment:center;}\n"
 "\n"
@@ -365,6 +371,7 @@ public:
         pbSendMessage->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
@@ -388,6 +395,7 @@ public:
         pbOpenClass->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/red.png);\n"
@@ -494,6 +502,7 @@ public:
         pushButton_4->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/red.png);\n"

@@ -196,5 +196,9 @@ bool STChatDetail::eventFilter(QObject *obj, QEvent *e)
 			return true;
 		}
 	}
+	else if (e->type() == QEvent::Resize)
+	{
+		ui.lwChatRecordList->scrollToBottom();
+	}
 	return false;
 }

@@ -61,6 +61,7 @@ public:
         if (STChatDetailClass->objectName().isEmpty())
             STChatDetailClass->setObjectName(QStringLiteral("STChatDetailClass"));
         STChatDetailClass->resize(730, 590);
+        STChatDetailClass->setStyleSheet(QStringLiteral(""));
         verticalLayout = new QVBoxLayout(STChatDetailClass);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -125,7 +126,7 @@ public:
         lwChatRecordList = new QListWidget(widTop);
         lwChatRecordList->setObjectName(QStringLiteral("lwChatRecordList"));
         lwChatRecordList->setFocusPolicy(Qt::NoFocus);
-        lwChatRecordList->setStyleSheet(QStringLiteral("QListWidget {border:0px;}"));
+        lwChatRecordList->setStyleSheet(QStringLiteral("QListWidget {border:0px;border-right: 1px solid #e3e3e3;}"));
         lwChatRecordList->setProperty("showDropIndicator", QVariant(true));
         lwChatRecordList->setAlternatingRowColors(false);
         lwChatRecordList->setSelectionMode(QAbstractItemView::NoSelection);
@@ -147,6 +148,7 @@ public:
         widget_3->setObjectName(QStringLiteral("widget_3"));
         widget_3->setMinimumSize(QSize(0, 40));
         widget_3->setMaximumSize(QSize(16777215, 40));
+        widget_3->setStyleSheet(QStringLiteral("QWidget#widget_3{border-right: 1px solid #e3e3e3;}"));
         horizontalLayout = new QHBoxLayout(widget_3);
         horizontalLayout->setSpacing(20);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -264,6 +266,7 @@ public:
         widChatWrite->setSizePolicy(sizePolicy);
         widChatWrite->setMinimumSize(QSize(0, 80));
         widChatWrite->setMaximumSize(QSize(16777215, 200));
+        widChatWrite->setStyleSheet(QStringLiteral("border-right: 1px solid #e3e3e3;"));
         horizontalLayout_5 = new QHBoxLayout(widChatWrite);
         horizontalLayout_5->setSpacing(0);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
@@ -291,6 +294,7 @@ public:
         widget_5->setObjectName(QStringLiteral("widget_5"));
         widget_5->setMinimumSize(QSize(0, 40));
         widget_5->setMaximumSize(QSize(16777215, 40));
+        widget_5->setStyleSheet(QStringLiteral("border-right: 1px solid #e3e3e3;border-bottom: 1px solid #e3e3e3;"));
         horizontalLayout_4 = new QHBoxLayout(widget_5);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 10, 0);
@@ -303,6 +307,7 @@ public:
         pbSendMessage->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 9pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
@@ -347,9 +352,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'\345\276\256\350\275\257\351\233\205\351\273\221 Light'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3</p></body></html>", 0));
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", 0));
         pbSendMessage->setText(QApplication::translate("STChatDetailClass", "\345\217\221\351\200\201", 0));
     } // retranslateUi
 

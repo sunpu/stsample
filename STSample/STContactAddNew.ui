@@ -14,7 +14,9 @@
    <string>STContactAddNew</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {background-color: #ffffff;}</string>
+   <string notr="true">QWidget {background-color: #ffffff;}
+
+QWidget#STContactAddNewClass{border-right: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-bottom: 1px solid #e3e3e3;}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -92,6 +94,7 @@
          <string notr="true">
 
 QPushButton {
+	border-radius: 3px;
 	color: rgb(255, 255, 255);
 	font: 10pt &quot;微软雅黑&quot;;
 	border-image: url(:/STSample/Resources/images/green.png);
@@ -611,6 +614,7 @@ QPushButton:hover:pressed{
             <string notr="true">
 
 QPushButton {
+	border-radius: 3px;
 	color: rgb(255, 255, 255);
 	font: 10pt &quot;微软雅黑&quot;;
 	border-image: url(:/STSample/Resources/images/green.png);

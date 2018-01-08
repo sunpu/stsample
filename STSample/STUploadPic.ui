@@ -26,7 +26,7 @@
    <string>STUploadPic</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog {background-color: #ffffff;}</string>
+   <string notr="true">QDialog {background-color: #ffffff;border: 1px solid #e3e3e3;}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -197,6 +197,7 @@ QPushButton:hover:!pressed {
             <string notr="true">
 
 QPushButton {
+	border-radius: 3px;
 	color: rgb(255, 255, 255);
 	border-image: url(:/STSample/Resources/images/green.png);
 }
@@ -383,9 +384,9 @@ QPushButton:hover {
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout">
+    <layout class="QHBoxLayout" name="hblayout">
      <property name="spacing">
-      <number>10</number>
+      <number>50</number>
      </property>
      <property name="leftMargin">
       <number>10</number>
@@ -394,20 +395,20 @@ QPushButton:hover {
       <number>10</number>
      </property>
      <property name="rightMargin">
-      <number>20</number>
+      <number>10</number>
      </property>
      <property name="bottomMargin">
       <number>20</number>
      </property>
      <item>
-      <spacer>
+      <spacer name="horizontalSpacer_8">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>131</width>
-         <height>31</height>
+         <width>40</width>
+         <height>20</height>
         </size>
        </property>
       </spacer>
@@ -436,6 +437,7 @@ QPushButton:hover {
         <string notr="true">
 
 QPushButton {
+	border-radius: 3px;
 	color: rgb(255, 255, 255);
 	border-image: url(:/STSample/Resources/images/green.png);
 }
@@ -475,6 +477,7 @@ QPushButton:hover:pressed{
         <string notr="true">
 
 QPushButton {
+	border-radius: 3px;
 	color: rgb(255, 255, 255);
 	border-image: url(:/STSample/Resources/images/red.png);
 }
@@ -489,6 +492,19 @@ QPushButton:hover:pressed{
         <string>取　消</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
@@ -512,8 +528,8 @@ QPushButton:hover:pressed{
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>278</x>
-     <y>253</y>
+     <x>224</x>
+     <y>396</y>
     </hint>
     <hint type="destinationlabel">
      <x>96</x>
@@ -528,8 +544,8 @@ QPushButton:hover:pressed{
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>369</x>
-     <y>253</y>
+     <x>299</x>
+     <y>396</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>

@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>STLogin</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="9,11">
    <property name="spacing">
     <number>0</number>
@@ -290,7 +293,7 @@ QPushButton:hover:!pressed {
    <item>
     <widget class="QWidget" name="widBottom" native="true">
      <property name="styleSheet">
-      <string notr="true">QWidget#widBottom {background-color: #ffffff;}</string>
+      <string notr="true">QWidget#widBottom {background-color: #ffffff;border: 1px solid #e3e3e3;}</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <property name="spacing">
@@ -707,6 +710,7 @@ QCheckBox::indicator:checked {
             <string notr="true">
 
 QPushButton {
+	border-radius: 3px;
 	color: rgb(255, 255, 255);
 	border-image: url(:/STSample/Resources/images/green.png);
 }

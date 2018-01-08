@@ -85,6 +85,7 @@ public:
         STLoginClass->resize(350, 480);
         STLoginClass->setMinimumSize(QSize(350, 480));
         STLoginClass->setMaximumSize(QSize(350, 480));
+        STLoginClass->setStyleSheet(QStringLiteral(""));
         verticalLayout = new QVBoxLayout(STLoginClass);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -202,7 +203,7 @@ public:
 
         widBottom = new QWidget(STLoginClass);
         widBottom->setObjectName(QStringLiteral("widBottom"));
-        widBottom->setStyleSheet(QStringLiteral("QWidget#widBottom {background-color: #ffffff;}"));
+        widBottom->setStyleSheet(QStringLiteral("QWidget#widBottom {background-color: #ffffff;border: 1px solid #e3e3e3;}"));
         verticalLayout_3 = new QVBoxLayout(widBottom);
         verticalLayout_3->setSpacing(0);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -391,6 +392,7 @@ public:
         pbLogin->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"

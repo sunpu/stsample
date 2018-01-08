@@ -131,7 +131,8 @@ public:
         if (STPersonalInfoClass->objectName().isEmpty())
             STPersonalInfoClass->setObjectName(QStringLiteral("STPersonalInfoClass"));
         STPersonalInfoClass->resize(956, 690);
-        STPersonalInfoClass->setStyleSheet(QStringLiteral(""));
+        STPersonalInfoClass->setStyleSheet(QLatin1String("QWidget#STPersonalInfoClass{border-bottom: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;}\n"
+""));
         horizontalLayout_16 = new QHBoxLayout(STPersonalInfoClass);
         horizontalLayout_16->setSpacing(0);
         horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
@@ -444,6 +445,7 @@ public:
         pbEdit->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
@@ -465,6 +467,7 @@ public:
         pbSave->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
@@ -528,6 +531,7 @@ public:
         pbModifyPasswd->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
@@ -712,6 +716,7 @@ public:
         pbModify->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"
 "}\n"
@@ -732,6 +737,7 @@ public:
         pbCancel->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/red.png);\n"

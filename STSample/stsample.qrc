@@ -47,6 +47,9 @@
         <file>Resources/images/bubble_right.png</file>
         <file>Resources/images/load.gif</file>
         <file>Resources/images/camera.png</file>
-        <file>Resources/images/pic_border.png</file>
+        <file>Resources/images/param.png</file>
+        <file>Resources/images/relogin.png</file>
+        <file>Resources/images/exit.png</file>
+        <file>Resources/images/menu.png</file>
     </qresource>
 </RCC>

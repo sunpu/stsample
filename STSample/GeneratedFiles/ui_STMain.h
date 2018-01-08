@@ -244,12 +244,14 @@ public:
 
         widCenterWindow = new QWidget(STMainClass);
         widCenterWindow->setObjectName(QStringLiteral("widCenterWindow"));
+        widCenterWindow->setStyleSheet(QStringLiteral(""));
         verticalLayout_4 = new QVBoxLayout(widCenterWindow);
         verticalLayout_4->setSpacing(0);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
         widget_10 = new QWidget(widCenterWindow);
         widget_10->setObjectName(QStringLiteral("widget_10"));
+        widget_10->setStyleSheet(QStringLiteral(""));
         horizontalLayout = new QHBoxLayout(widget_10);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -258,7 +260,7 @@ public:
         widSearch->setObjectName(QStringLiteral("widSearch"));
         widSearch->setMinimumSize(QSize(290, 0));
         widSearch->setMaximumSize(QSize(290, 45));
-        widSearch->setStyleSheet(QLatin1String("QWidget{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}\n"
+        widSearch->setStyleSheet(QLatin1String("QWidget{border-bottom: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}\n"
 ""));
         horizontalLayout_5 = new QHBoxLayout(widSearch);
         horizontalLayout_5->setSpacing(9);
@@ -306,7 +308,7 @@ public:
         widTitle->setObjectName(QStringLiteral("widTitle"));
         widTitle->setMinimumSize(QSize(0, 45));
         widTitle->setMaximumSize(QSize(16777215, 45));
-        widTitle->setStyleSheet(QStringLiteral("QWidget{border-bottom: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
+        widTitle->setStyleSheet(QStringLiteral("QWidget#widTitle{border-bottom: 1px solid #e3e3e3;border-top: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
         horizontalLayout_10 = new QHBoxLayout(widTitle);
         horizontalLayout_10->setSpacing(0);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
@@ -407,7 +409,7 @@ public:
 
         swMain = new QStackedWidget(widCenterWindow);
         swMain->setObjectName(QStringLiteral("swMain"));
-        swMain->setStyleSheet(QStringLiteral("QWidget#pgPersonalInfo{background-color: rgb(255, 255, 255);}"));
+        swMain->setStyleSheet(QStringLiteral(""));
         pgChatWindow = new QWidget();
         pgChatWindow->setObjectName(QStringLiteral("pgChatWindow"));
         horizontalLayout_8 = new QHBoxLayout(pgChatWindow);
@@ -427,7 +429,7 @@ public:
         lwChatList = new QListWidget(widget_13);
         lwChatList->setObjectName(QStringLiteral("lwChatList"));
         lwChatList->setFocusPolicy(Qt::NoFocus);
-        lwChatList->setStyleSheet(QLatin1String("QListWidget{border:0px;border-right:1px solid #e3e3e3;}\n"
+        lwChatList->setStyleSheet(QLatin1String("QListWidget{border:0px;border-right:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;}\n"
 "QListWidget::Item{height:60px;padding-top:0px; padding-bottom:0px;}\n"
 "QListWidget::Item:hover{background:#ececec; }\n"
 "QListWidget::item:selected{background:#ececec; }"));
@@ -446,7 +448,8 @@ public:
         horizontalLayout_15->setContentsMargins(0, 0, 0, 0);
         widChatBlank = new QWidget(widChatMainWindow);
         widChatBlank->setObjectName(QStringLiteral("widChatBlank"));
-        widChatBlank->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        widChatBlank->setStyleSheet(QLatin1String("\n"
+"QWidget#widChatBlank{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
         horizontalLayout_7 = new QHBoxLayout(widChatBlank);
         horizontalLayout_7->setSpacing(0);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
@@ -508,7 +511,7 @@ public:
         widget->setObjectName(QStringLiteral("widget"));
         widget->setMinimumSize(QSize(290, 0));
         widget->setMaximumSize(QSize(290, 16777215));
-        widget->setStyleSheet(QStringLiteral("QWidget#widget{border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
+        widget->setStyleSheet(QStringLiteral("QWidget#widget{border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
         verticalLayout_3 = new QVBoxLayout(widget);
         verticalLayout_3->setSpacing(0);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -578,7 +581,8 @@ public:
         horizontalLayout_12->setContentsMargins(0, 0, 0, 0);
         widContactBlank = new QWidget(widContactMainWindow);
         widContactBlank->setObjectName(QStringLiteral("widContactBlank"));
-        widContactBlank->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        widContactBlank->setStyleSheet(QLatin1String("\n"
+"QWidget#widContactBlank{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
         horizontalLayout_6 = new QHBoxLayout(widContactBlank);
         horizontalLayout_6->setSpacing(0);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
@@ -620,7 +624,8 @@ public:
 
         widContactAddNew = new QWidget(widContactMainWindow);
         widContactAddNew->setObjectName(QStringLiteral("widContactAddNew"));
-        widContactAddNew->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        widContactAddNew->setStyleSheet(QLatin1String("\n"
+"QWidget#widContactAddNew{border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;background-color: rgb(255, 255, 255);}"));
         horizontalLayout_16 = new QHBoxLayout(widContactAddNew);
         horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
         horizontalLayout_16->setContentsMargins(0, 0, 0, 0);
@@ -642,6 +647,8 @@ public:
         swMain->addWidget(pgContactWindow);
         pgPersonalInfo = new QWidget();
         pgPersonalInfo->setObjectName(QStringLiteral("pgPersonalInfo"));
+        pgPersonalInfo->setStyleSheet(QLatin1String("QWidget#pgPersonalInfo{background-color: rgb(255, 255, 255);border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;}\n"
+""));
         horizontalLayout_17 = new QHBoxLayout(pgPersonalInfo);
         horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
         swMain->addWidget(pgPersonalInfo);

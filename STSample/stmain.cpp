@@ -30,6 +30,13 @@ STMain::STMain(XmppClient* client) : m_xmppClient(client)
 	// 初始化左侧工具栏
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat_on.png);}");
 
+	m_menu = new STMenu(this);
+	connect(m_menu, SIGNAL(confirmExit()), this, SLOT(confirmExit()));
+	connect(m_menu, SIGNAL(confirmRelogin()), this, SLOT(confirmRelogin()));
+	m_menu->hide();
+	m_confirm = new STConfirm(this);
+	connect(m_confirm, SIGNAL(confirmOK()), this, SLOT(handleConfirmOK()));
+
 	// 初始化右侧窗口
 	initContactAddNew();
 
@@ -265,7 +272,7 @@ void STMain::on_lwContactList_itemClicked()
 	ui.widContactDetail->setVisible(true);
 	ui.widContactBlank->setVisible(false);
 	ui.widContactAddNew->setVisible(false);
-	ui.widTitle->setStyleSheet("QWidget{border-bottom:0px;background-color:#434555;}");
+	ui.widTitle->setStyleSheet("QWidget{border:0px;background-color:#434555;}");
 }
 
 void STMain::switchChatItem(QString jid)
@@ -397,6 +404,43 @@ void STMain::updateSelfPic(QString picPath)
 		(*it)->updateSelfPic(picPath);
 	}
 }
+void STMain::confirmExit()
+{
+	m_confirmMode = "exit";
+	m_confirm->setText(QStringLiteral("您是否确定退出系统？"));
+	int parentX = geometry().x();
+	int parentY = geometry().y();
+	int parentWidth = geometry().width();
+	int parentHeight = geometry().height();
+	m_confirm->move(QPoint(parentX + (parentWidth - m_confirm->width()) / 2,
+		parentY + (parentHeight - m_confirm->height()) / 2));
+	m_confirm->exec();
+}
+
+void STMain::confirmRelogin()
+{
+	m_confirmMode = "relogin";
+	m_confirm->setText(QStringLiteral("您是否确定切换账号？"));
+	int parentX = geometry().x();
+	int parentY = geometry().y();
+	int parentWidth = geometry().width();
+	int parentHeight = geometry().height();
+	m_confirm->move(QPoint(parentX + (parentWidth - m_confirm->width()) / 2,
+		parentY + (parentHeight - m_confirm->height()) / 2));
+	m_confirm->exec();
+}
+
+void STMain::handleConfirmOK()
+{
+	if (m_confirmMode == "exit")
+	{
+		close();
+	}
+	else if (m_confirmMode == "relogin")
+	{
+		on_pbRelogin_clicked();
+	}
+}
 
 void STMain::on_lwContactList_itemDoubleClicked()
 {
@@ -417,7 +461,8 @@ void STMain::on_pbChat_clicked()
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat_on.png);}");
 	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/contact_focus.png);}");
-	ui.widTitle->setStyleSheet("QWidget{border-bottom:1px solid #e3e3e3;background-color:#ffffff;}");
+	ui.widTitle->setStyleSheet("QWidget#widTitle{border-bottom:1px solid #e3e3e3;"
+		"border-top:1px solid #e3e3e3;border-right:1px solid #e3e3e3;background-color:#ffffff;}");
 	if (ui.lwChatList->selectedItems().size() > 0)
 	{
 		ui.lblChatTitle->setText(((STChatItem*)
@@ -432,9 +477,9 @@ void STMain::on_pbContact_clicked()
 	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact_on.png);}");
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/chat_focus.png);}");
-	if (ui.lwContactList->selectedItems().size() > 0)
+	if (ui.lwContactList->selectedItems().size() > 0 && !ui.widContactAddNew->isVisible())
 	{
-		ui.widTitle->setStyleSheet("QWidget{border-bottom:0px;background-color:#434555;}");
+		ui.widTitle->setStyleSheet("QWidget{border:0px;background-color:#434555;}");
 	}
 	ui.lblChatTitle->clear();
 }
@@ -448,6 +493,8 @@ void STMain::on_pbAddContact_clicked()
 	m_contactAddNew->initAddNewWindow();
 
 	on_pbContact_clicked();
+	ui.widTitle->setStyleSheet("QWidget#widTitle{border-bottom:1px solid #e3e3e3;"
+		"border-top:1px solid #e3e3e3;border-right:1px solid #e3e3e3;background-color:#ffffff;}");
 }
 
 void STMain::on_pbMessage_clicked()
@@ -456,6 +503,11 @@ void STMain::on_pbMessage_clicked()
 
 void STMain::on_pbSetting_clicked()
 {
+	m_menu->hide();
+	int x = geometry().x() + 15;
+	int y = geometry().y() + geometry().height() - 45 - m_menu->height();
+	m_menu->move(QPoint(x, y));
+	m_menu->show();
 }
 
 void STMain::on_pbMinimum_clicked()
@@ -481,7 +533,7 @@ void STMain::on_pbNormal_clicked()
 
 void STMain::on_pbClose_clicked()
 {
-	this->window()->close();
+	confirmExit();
 }
 
 void STMain::on_pbRelogin_clicked()
@@ -540,7 +592,8 @@ bool STMain::eventFilter(QObject* obj, QEvent* e)
 			ui.widSearch->setVisible(false);
 			ui.swMain->setCurrentIndex(2);
 			ui.lblChatTitle->clear();
-			ui.widTitle->setStyleSheet("QWidget{border-bottom:1px solid #e3e3e3;background-color:#ffffff;}");
+			ui.widTitle->setStyleSheet("QWidget#widTitle{border-bottom:1px solid #e3e3e3;"
+				"border-top:1px solid #e3e3e3;border-right:1px solid #e3e3e3;background-color:#ffffff;}");
 		}
 	}
 	else if (e->type() == QEvent::MouseButtonDblClick && ui.widTitle == obj)
@@ -555,35 +608,4 @@ bool STMain::eventFilter(QObject* obj, QEvent* e)
 		}
 	}
 	return false;
-}
-
-void STMain::paintEvent(QPaintEvent* event)
-{
-	/*QPainter painter(this);
-	this->drawShadow(painter);
-	painter.setPen(Qt::NoPen);
-	painter.setBrush(Qt::white);
-	painter.drawRect(QRect(SHADOW_WIDTH, SHADOW_WIDTH, this->width() - 2 * SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH));*/
-}
-
-void STMain::drawShadow(QPainter &painter)
-{
-	QList<QPixmap> pixmaps;
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_left.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_right.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_top.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_bottom.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_left_top.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_right_top.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_left_bottom.png"));
-	pixmaps.append(QPixmap(":/STSample/Resources/images/shadow_right_bottom.png"));
-	painter.drawPixmap(0, 0, SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[4]);
-	painter.drawPixmap(this->width() - SHADOW_WIDTH, 0, SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[5]);
-	painter.drawPixmap(0, this->height() - SHADOW_WIDTH, SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[6]);
-	painter.drawPixmap(this->width() - SHADOW_WIDTH, this->height() - SHADOW_WIDTH, SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[7]);
-	painter.drawPixmap(0, SHADOW_WIDTH, SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH, pixmaps[0].scaled(SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH));
-	painter.drawPixmap(this->width() - SHADOW_WIDTH, SHADOW_WIDTH, SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH, pixmaps[1].scaled(SHADOW_WIDTH, this->height() - 2 * SHADOW_WIDTH));
-	painter.drawPixmap(SHADOW_WIDTH, 0, this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[2].scaled(this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH));
-	painter.drawPixmap(SHADOW_WIDTH, this->height() - SHADOW_WIDTH, this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH, pixmaps[3].scaled(this->width() - 2 * SHADOW_WIDTH, SHADOW_WIDTH));
-
 }

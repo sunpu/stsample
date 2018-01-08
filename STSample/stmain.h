@@ -6,6 +6,7 @@
 #include <QList>
 #include <QPainter>
 #include <QDir>
+#include <QtMath>
 #include "ui_STMain.h"
 #include "stchatdetail.h"
 #include "stcontactitem.h"
@@ -14,6 +15,7 @@
 #include "stpersonalinfo.h"
 #include "stchatitem.h"
 #include "xmppclient.h"
+#include "stmenu.h"
 
 using namespace tahiti;
 
@@ -57,9 +59,6 @@ namespace tahiti
 		virtual void mouseReleaseEvent(QMouseEvent* event);
 		bool eventFilter(QObject* obj, QEvent* e);
 	private:
-		void paintEvent(QPaintEvent* event);
-		void drawShadow(QPainter& painter);
-
 		void initChatWindow();
 		void initChatData();
 		void initChatList();
@@ -82,6 +81,9 @@ namespace tahiti
 		void reorderChatList(QString jid);
 		void switchChatWindow(QString jid);
 		void updateSelfPic(QString picPath);
+		void confirmExit();
+		void confirmRelogin();
+		void handleConfirmOK();
 	private:
 		Ui::STMainClass ui;
 		QPoint mousePosition;
@@ -102,6 +104,9 @@ namespace tahiti
 		QList<STContactItem*> m_contactItemList;
 		STContactDetail* m_contactDetail;
 		STPersonalInfo* m_personalInfo;
+		STMenu* m_menu;
+		STConfirm* m_confirm;
+		QString m_confirmMode;
 	};
 }
 #endif

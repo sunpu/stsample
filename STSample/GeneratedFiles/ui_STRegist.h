@@ -73,6 +73,7 @@ public:
         STRegistClass->resize(350, 480);
         STRegistClass->setMinimumSize(QSize(350, 480));
         STRegistClass->setMaximumSize(QSize(350, 480));
+        STRegistClass->setStyleSheet(QStringLiteral(""));
         verticalLayout = new QVBoxLayout(STRegistClass);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -81,7 +82,10 @@ public:
         widTop->setObjectName(QStringLiteral("widTop"));
         widTop->setMinimumSize(QSize(0, 45));
         widTop->setMaximumSize(QSize(16777215, 45));
-        widTop->setStyleSheet(QStringLiteral("background-color: #ffffff;"));
+        widTop->setStyleSheet(QLatin1String("\n"
+"QWidget#widTop {background-color: #ffffff;border-top: 1px solid #e3e3e3;\n"
+"border-left: 1px solid #e3e3e3;\n"
+"border-right: 1px solid #e3e3e3;}"));
         horizontalLayout_10 = new QHBoxLayout(widTop);
         horizontalLayout_10->setSpacing(0);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
@@ -155,9 +159,12 @@ public:
 
         widBottom = new QWidget(STRegistClass);
         widBottom->setObjectName(QStringLiteral("widBottom"));
-        widBottom->setStyleSheet(QStringLiteral("QWidget#widBottom {background-color: #ffffff;}"));
+        widBottom->setStyleSheet(QLatin1String("QWidget#widBottom {background-color: #ffffff;border-bottom: 1px solid #e3e3e3;\n"
+"border-left: 1px solid #e3e3e3;\n"
+"border-right: 1px solid #e3e3e3;}"));
         verticalLayout_2 = new QVBoxLayout(widBottom);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_2->addItem(verticalSpacer);
@@ -183,7 +190,7 @@ public:
         font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font1.setPointSize(10);
         label->setFont(font1);
-        label->setStyleSheet(QStringLiteral(""));
+        label->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_7->addWidget(label);
 
@@ -237,6 +244,7 @@ public:
         label_2 = new QLabel(widget_10);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setFont(font1);
+        label_2->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_8->addWidget(label_2);
 
@@ -285,6 +293,7 @@ public:
         label_4 = new QLabel(widget_12);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setFont(font1);
+        label_4->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_11->addWidget(label_4);
 
@@ -332,6 +341,7 @@ public:
         pbRegist->setStyleSheet(QString::fromUtf8("\n"
 "\n"
 "QPushButton {\n"
+"	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
 "	font:11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
 "	border-image: url(:/STSample/Resources/images/green.png);\n"

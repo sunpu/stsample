@@ -254,6 +254,21 @@ void XmppClient::logout()
 	{
 		m_client->disconnect();
 	}
+	m_friendList.clear();
+	m_requestId = 0;
+	m_xmppStatus = Presence::Unavailable;
+	m_needLogin = true;
+	if (m_client)
+	{
+		QMap<QString, MessageSession*>::Iterator it;
+		for (it = m_sessionMap.begin(); it != m_sessionMap.end(); it++)
+		{
+			m_client->disposeMessageSession(it.value());
+		}
+		delete(m_client);
+		m_client = NULL;
+	}
+	m_responseMap.clear();
 	setXmppStatus(Presence::Unavailable);
 }
 

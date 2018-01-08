@@ -5,6 +5,8 @@
 #include <QMouseEvent>
 #include <QFileDialog>
 #include <QStandardPaths>
+#include <QPainter>
+#include <QtMath>
 #include "ui_STUploadPic.h"
 
 namespace tahiti
