@@ -447,13 +447,14 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbEdit->setFlat(true);
 
@@ -469,13 +470,14 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
 
         horizontalLayout_14->addWidget(pbSave);
@@ -533,13 +535,14 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbModifyPasswd->setFlat(true);
 
@@ -718,13 +721,14 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbModify->setFlat(true);
 
@@ -734,19 +738,19 @@ public:
         pbCancel->setObjectName(QStringLiteral("pbCancel"));
         pbCancel->setMinimumSize(QSize(100, 30));
         pbCancel->setMaximumSize(QSize(100, 30));
-        pbCancel->setStyleSheet(QString::fromUtf8("\n"
+        pbCancel->setFont(font4);
+        pbCancel->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/red.png);\n"
+"	background-color: rgb(255, 103, 65);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(255, 103, 65);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
+"	background-color: rgb(255, 133, 103);\n"
 "}"));
         pbCancel->setFlat(true);
 

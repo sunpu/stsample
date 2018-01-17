@@ -272,7 +272,7 @@ QTabWidget::tab-bar{alignment:center;}
                </property>
                <property name="font">
                 <font>
-                 <family>微软雅黑 Light</family>
+                 <family>微软雅黑</family>
                  <pointsize>11</pointsize>
                 </font>
                </property>
@@ -378,7 +378,7 @@ QTabWidget::tab-bar{alignment:center;}
                </property>
                <property name="font">
                 <font>
-                 <family>微软雅黑 Light</family>
+                 <family>微软雅黑</family>
                  <pointsize>11</pointsize>
                 </font>
                </property>
@@ -484,7 +484,7 @@ QTabWidget::tab-bar{alignment:center;}
                </property>
                <property name="font">
                 <font>
-                 <family>微软雅黑 Light</family>
+                 <family>微软雅黑</family>
                  <pointsize>11</pointsize>
                 </font>
                </property>
@@ -590,7 +590,7 @@ QTabWidget::tab-bar{alignment:center;}
                </property>
                <property name="font">
                 <font>
-                 <family>微软雅黑 Light</family>
+                 <family>微软雅黑</family>
                  <pointsize>11</pointsize>
                 </font>
                </property>
@@ -688,22 +688,26 @@ QTabWidget::tab-bar{alignment:center;}
                  <height>30</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">
 
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	font: 10pt &quot;微软雅黑&quot;;
-	border-image: url(:/STSample/Resources/images/green.png);
-	width: 90;
-	height: 25;
+	background-color: rgb(48, 186, 120);
+}
+QPushButton:hover:pressed {
+	background-color: rgb(48, 186, 120);
 }
 QPushButton:hover:!pressed {
-	border-image: url(:/STSample/Resources/images/green_focus.png);
-}
-QPushButton:hover:pressed{
-	border-image: url(:/STSample/Resources/images/green_focus.png);
+	
+	background-color: rgb(109, 206, 160);
 }</string>
                </property>
                <property name="text">
@@ -731,22 +735,25 @@ QPushButton:hover:pressed{
                  <height>30</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">
 
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	font: 10pt &quot;微软雅黑&quot;;
-	border-image: url(:/STSample/Resources/images/red.png);
-	width: 90;
-	height: 25;
+	background-color: rgb(255, 103, 65);
+}
+QPushButton:hover:pressed {
+	background-color: rgb(255, 103, 65);
 }
 QPushButton:hover:!pressed {
-	border-image: url(:/STSample/Resources/images/red_focus.png);
-}
-QPushButton:hover:pressed{
-	border-image: url(:/STSample/Resources/images/red_focus.png);
+	background-color: rgb(255, 133, 103);
 }</string>
                </property>
                <property name="text">
@@ -840,7 +847,7 @@ QPushButton:hover:pressed{
                </property>
                <property name="font">
                 <font>
-                 <family>微软雅黑 Light</family>
+                 <family>微软雅黑</family>
                  <pointsize>11</pointsize>
                 </font>
                </property>
@@ -920,6 +927,12 @@ QCheckBox::indicator:checked {
           </item>
           <item>
            <widget class="QWidget" name="widget_11" native="true">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <layout class="QHBoxLayout" name="horizontalLayout_9">
              <property name="spacing">
               <number>50</number>
@@ -954,22 +967,25 @@ QCheckBox::indicator:checked {
                  <height>30</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">
 
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	font: 10pt &quot;微软雅黑&quot;;
-	border-image: url(:/STSample/Resources/images/red.png);
-	width: 90;
-	height: 25;
+	background-color: rgb(255, 103, 65);
+}
+QPushButton:hover:pressed {
+	background-color: rgb(255, 103, 65);
 }
 QPushButton:hover:!pressed {
-	border-image: url(:/STSample/Resources/images/red_focus.png);
-}
-QPushButton:hover:pressed{
-	border-image: url(:/STSample/Resources/images/red_focus.png);
+	background-color: rgb(255, 133, 103);
 }</string>
                </property>
                <property name="text">

@@ -220,10 +220,7 @@ public:
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setMinimumSize(QSize(100, 30));
         label_3->setMaximumSize(QSize(100, 30));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221 Light"));
-        font2.setPointSize(11);
-        label_3->setFont(font2);
+        label_3->setFont(font1);
         label_3->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_3->setAlignment(Qt::AlignCenter);
 
@@ -233,6 +230,9 @@ public:
         lblJid->setObjectName(QStringLiteral("lblJid"));
         lblJid->setMinimumSize(QSize(200, 30));
         lblJid->setMaximumSize(QSize(200, 30));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221 Light"));
+        font2.setPointSize(11);
         lblJid->setFont(font2);
         lblJid->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         lblJid->setAlignment(Qt::AlignCenter);
@@ -259,7 +259,7 @@ public:
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setMinimumSize(QSize(100, 30));
         label_5->setMaximumSize(QSize(100, 30));
-        label_5->setFont(font2);
+        label_5->setFont(font1);
         label_5->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_5->setAlignment(Qt::AlignCenter);
 
@@ -295,7 +295,7 @@ public:
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setMinimumSize(QSize(100, 30));
         label_9->setMaximumSize(QSize(100, 30));
-        label_9->setFont(font2);
+        label_9->setFont(font1);
         label_9->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_9->setAlignment(Qt::AlignCenter);
 
@@ -331,7 +331,7 @@ public:
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setMinimumSize(QSize(100, 30));
         label_11->setMaximumSize(QSize(100, 30));
-        label_11->setFont(font2);
+        label_11->setFont(font1);
         label_11->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_11->setAlignment(Qt::AlignCenter);
 
@@ -368,21 +368,23 @@ public:
         pbSendMessage->setObjectName(QStringLiteral("pbSendMessage"));
         pbSendMessage->setMinimumSize(QSize(120, 30));
         pbSendMessage->setMaximumSize(QSize(120, 30));
-        pbSendMessage->setStyleSheet(QString::fromUtf8("\n"
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(10);
+        pbSendMessage->setFont(font3);
+        pbSendMessage->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
-"	width: 90;\n"
-"	height: 25;\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbSendMessage->setFlat(true);
 
@@ -392,21 +394,19 @@ public:
         pbOpenClass->setObjectName(QStringLiteral("pbOpenClass"));
         pbOpenClass->setMinimumSize(QSize(120, 30));
         pbOpenClass->setMaximumSize(QSize(120, 30));
-        pbOpenClass->setStyleSheet(QString::fromUtf8("\n"
+        pbOpenClass->setFont(font3);
+        pbOpenClass->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/red.png);\n"
-"	width: 90;\n"
-"	height: 25;\n"
+"	background-color: rgb(255, 103, 65);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(255, 103, 65);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
+"	background-color: rgb(255, 133, 103);\n"
 "}"));
         pbOpenClass->setFlat(true);
 
@@ -442,7 +442,7 @@ public:
         label_13->setObjectName(QStringLiteral("label_13"));
         label_13->setMinimumSize(QSize(100, 30));
         label_13->setMaximumSize(QSize(100, 30));
-        label_13->setFont(font2);
+        label_13->setFont(font1);
         label_13->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_13->setAlignment(Qt::AlignCenter);
 
@@ -487,6 +487,7 @@ public:
 
         widget_11 = new QWidget(twSetting);
         widget_11->setObjectName(QStringLiteral("widget_11"));
+        widget_11->setFont(font3);
         horizontalLayout_9 = new QHBoxLayout(widget_11);
         horizontalLayout_9->setSpacing(50);
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
@@ -499,21 +500,19 @@ public:
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setMinimumSize(QSize(200, 30));
         pushButton_4->setMaximumSize(QSize(200, 30));
-        pushButton_4->setStyleSheet(QString::fromUtf8("\n"
+        pushButton_4->setFont(font3);
+        pushButton_4->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/red.png);\n"
-"	width: 90;\n"
-"	height: 25;\n"
+"	background-color: rgb(255, 103, 65);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(255, 103, 65);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
+"	background-color: rgb(255, 133, 103);\n"
 "}"));
         pushButton_4->setFlat(true);
 

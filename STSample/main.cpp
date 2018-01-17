@@ -24,12 +24,9 @@ int main(int argc, char *argv[])
 	{
 		dir->mkpath(rootPath + AVATAR_PATH);
 	}
-
-	// 暂时没地方配置服务器地址 TODO
-	QString server = STConfig::getConfig("/xmpp/server");
-	if (server.size() == 0)
+	if (!dir->exists(rootPath + TMP_PATH))
 	{
-		STConfig::setConfig("/xmpp/server", "221.226.156.109");
+		dir->mkpath(rootPath + TMP_PATH);
 	}
 
 	XmppClient* xmpp_client = new XmppClient();

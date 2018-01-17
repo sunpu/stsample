@@ -8,10 +8,6 @@
         <file>Resources/images/vmediax.png</file>
         <file>Resources/images/checkbox_checked.png</file>
         <file>Resources/images/checkbox_unchecked.png</file>
-        <file>Resources/images/green.png</file>
-        <file>Resources/images/red.png</file>
-        <file>Resources/images/red_focus.png</file>
-        <file>Resources/images/green_focus.png</file>
         <file>Resources/images/chat.png</file>
         <file>Resources/images/chat_focus.png</file>
         <file>Resources/images/chat_on.png</file>
@@ -33,23 +29,62 @@
         <file>Resources/images/triangle_focus.png</file>
         <file>Resources/images/lesson.png</file>
         <file>Resources/images/lesson_focus.png</file>
-        <file>Resources/images/shadow_bottom.png</file>
-        <file>Resources/images/shadow_left.png</file>
-        <file>Resources/images/shadow_left_bottom.png</file>
-        <file>Resources/images/shadow_left_top.png</file>
-        <file>Resources/images/shadow_right.png</file>
-        <file>Resources/images/shadow_right_bottom.png</file>
-        <file>Resources/images/shadow_right_top.png</file>
-        <file>Resources/images/shadow_top.png</file>
         <file>Resources/images/account.png</file>
         <file>Resources/images/add_focus.png</file>
-        <file>Resources/images/bubble_left.png</file>
-        <file>Resources/images/bubble_right.png</file>
         <file>Resources/images/load.gif</file>
         <file>Resources/images/camera.png</file>
         <file>Resources/images/param.png</file>
         <file>Resources/images/relogin.png</file>
         <file>Resources/images/exit.png</file>
         <file>Resources/images/menu.png</file>
+        <file>Resources/images/config.png</file>
+        <file>Resources/images/no.png</file>
+        <file>Resources/images/yes.png</file>
+        <file>Resources/emoji/1.jpg</file>
+        <file>Resources/emoji/2.jpg</file>
+        <file>Resources/emoji/3.jpg</file>
+        <file>Resources/emoji/4.jpg</file>
+        <file>Resources/emoji/5.jpg</file>
+        <file>Resources/emoji/6.jpg</file>
+        <file>Resources/emoji/7.jpg</file>
+        <file>Resources/emoji/8.jpg</file>
+        <file>Resources/emoji/9.jpg</file>
+        <file>Resources/emoji/10.jpg</file>
+        <file>Resources/emoji/11.jpg</file>
+        <file>Resources/emoji/12.jpg</file>
+        <file>Resources/emoji/13.jpg</file>
+        <file>Resources/emoji/14.jpg</file>
+        <file>Resources/emoji/15.jpg</file>
+        <file>Resources/emoji/16.jpg</file>
+        <file>Resources/emoji/17.jpg</file>
+        <file>Resources/emoji/18.jpg</file>
+        <file>Resources/emoji/19.jpg</file>
+        <file>Resources/emoji/20.jpg</file>
+        <file>Resources/emoji/21.jpg</file>
+        <file>Resources/emoji/22.jpg</file>
+        <file>Resources/emoji/23.jpg</file>
+        <file>Resources/emoji/24.jpg</file>
+        <file>Resources/emoji/25.jpg</file>
+        <file>Resources/emoji/26.jpg</file>
+        <file>Resources/emoji/27.jpg</file>
+        <file>Resources/emoji/28.jpg</file>
+        <file>Resources/emoji/29.jpg</file>
+        <file>Resources/emoji/30.jpg</file>
+        <file>Resources/emoji/31.jpg</file>
+        <file>Resources/emoji/32.jpg</file>
+        <file>Resources/emoji/33.jpg</file>
+        <file>Resources/emoji/34.jpg</file>
+        <file>Resources/emoji/35.jpg</file>
+        <file>Resources/emoji/36.jpg</file>
+        <file>Resources/emoji/37.jpg</file>
+        <file>Resources/emoji/38.jpg</file>
+        <file>Resources/emoji/39.jpg</file>
+        <file>Resources/emoji/40.jpg</file>
+        <file>Resources/images/cloud.png</file>
+        <file>Resources/images/cloud_focus.png</file>
+        <file>Resources/images/cloud_on.png</file>
+        <file>Resources/images/group_focus.png</file>
+        <file>Resources/images/group_on.png</file>
+        <file>Resources/images/group.png</file>
     </qresource>
 </RCC>

@@ -56,6 +56,7 @@ bool STMenu::eventFilter(QObject* obj, QEvent* e)
 	{
 		if (ui.widParam == obj)
 		{
+			Q_EMIT showSettingWindow();
 		}
 		else if (ui.widRelogin == obj)
 		{

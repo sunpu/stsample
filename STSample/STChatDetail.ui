@@ -481,22 +481,37 @@ p, li { white-space: pre-wrap; }
           </item>
           <item>
            <widget class="QPushButton" name="pbSendMessage">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">
 
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	font: 9pt &quot;微软雅黑&quot;;
-	border-image: url(:/STSample/Resources/images/green.png);
-	width: 60;
-	height: 20;
+	background-color: rgb(48, 186, 120);
+}
+QPushButton:hover:pressed {
+	background-color: rgb(48, 186, 120);
 }
 QPushButton:hover:!pressed {
-	border-image: url(:/STSample/Resources/images/green_focus.png);
-}
-QPushButton:hover:pressed{
-	border-image: url(:/STSample/Resources/images/green_focus.png);
+	
+	background-color: rgb(109, 206, 160);
 }</string>
             </property>
             <property name="text">

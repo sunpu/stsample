@@ -113,7 +113,7 @@ public:
         teMessageOther->setFont(font1);
         teMessageOther->setStyleSheet(QLatin1String("QTextEdit {\n"
 "	border-radius: 3px;\n"
-"    border-image: url(:/STSample/Resources/images/bubble_left.png);  /* The border image                    */\n"
+"	background-color: rgb(228, 232, 238);\n"
 "    border-top-width: 2px;\n"
 "    border-right-width: 5px;\n"
 "    border-bottom-width:2px;\n"
@@ -153,7 +153,7 @@ public:
         teMessageSelf->setFont(font1);
         teMessageSelf->setStyleSheet(QLatin1String("QTextEdit {\n"
 "	border-radius: 3px;\n"
-"    border-image: url(:/STSample/Resources/images/bubble_right.png);  /* The border image                    */\n"
+"	background-color: rgb(48, 186, 120);\n"
 "    border-top-width: 2px;\n"
 "    border-right-width: 2px;\n"
 "    border-bottom-width:2px;\n"

@@ -123,11 +123,12 @@ XmppClient::~XmppClient()
 	}
 }
 
-void XmppClient::setXmppAccount(QString user, QString passwd, QString server)
+void XmppClient::setXmppAccount(QString user, QString passwd, QString server, QString port)
 {
 	m_xmppUser = user;
 	m_xmppServerIP = server;
 	m_xmppPasswd = passwd;
+	m_xmppServerPort = port.toInt();
 }
 
 void XmppClient::createNewClient()
@@ -143,7 +144,7 @@ void XmppClient::createNewClient()
 		delete(m_client);
 		m_client = NULL;
 	}
-	m_client = new Client(jid, m_xmppPasswd.toUtf8().constData());
+	m_client = new Client(jid, m_xmppPasswd.toUtf8().constData(), m_xmppServerPort);
 
 	m_client->registerConnectionListener(this);
 	m_client->registerMessageSessionHandler(this, 0);

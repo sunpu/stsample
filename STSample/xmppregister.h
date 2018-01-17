@@ -22,7 +22,7 @@ namespace tahiti
 	public:
 		XmppRegister();
 		virtual ~XmppRegister();
-		void registAccount(QString user, QString passwd, QString server);
+		void registAccount(QString user, QString passwd, QString server, QString port);
 	Q_SIGNALS:
 		void registResult(bool result);
 	private:
@@ -41,6 +41,7 @@ namespace tahiti
 		QString m_xmppUser;
 		QString m_xmppPasswd;
 		QString m_xmppServerIP;
+		int m_xmppServerPort;
 	};
 }
 #endif

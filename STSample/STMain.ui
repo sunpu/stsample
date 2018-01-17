@@ -194,6 +194,62 @@ QPushButton:hover:!pressed {
            </property>
           </widget>
          </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pbGroup">
+           <property name="minimumSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+	border-image: url(:/STSample/Resources/images/group.png);
+}
+QPushButton:hover:!pressed {
+	border-image: url(:/STSample/Resources/images/group_focus.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QPushButton" name="pbCloud">
+           <property name="minimumSize">
+            <size>
+             <width>32</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>32</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+	border-image: url(:/STSample/Resources/images/cloud.png);
+}
+QPushButton:hover:!pressed {
+	border-image: url(:/STSample/Resources/images/cloud_focus.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>

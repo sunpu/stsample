@@ -190,6 +190,7 @@ QPushButton:hover:!pressed {
            </property>
            <property name="font">
             <font>
+             <family>微软雅黑</family>
              <pointsize>10</pointsize>
             </font>
            </property>
@@ -199,10 +200,14 @@ QPushButton:hover:!pressed {
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	border-image: url(:/STSample/Resources/images/green.png);
+	background-color: rgb(48, 186, 120);
 }
-QPushButton:hover {
-	border-image: url(:/STSample/Resources/images/green_focus.png);
+QPushButton:hover:pressed {
+	background-color: rgb(48, 186, 120);
+}
+QPushButton:hover:!pressed {
+	
+	background-color: rgb(109, 206, 160);
 }</string>
            </property>
            <property name="text">
@@ -439,13 +444,14 @@ QPushButton:hover {
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	border-image: url(:/STSample/Resources/images/green.png);
+	background-color: rgb(48, 186, 120);
+}
+QPushButton:hover:pressed {
+	background-color: rgb(48, 186, 120);
 }
 QPushButton:hover:!pressed {
-	border-image: url(:/STSample/Resources/images/green_focus.png);
-}
-QPushButton:hover:pressed{
-	border-image: url(:/STSample/Resources/images/green_focus.png);
+	
+	background-color: rgb(109, 206, 160);
 }</string>
        </property>
        <property name="text">
@@ -479,13 +485,13 @@ QPushButton:hover:pressed{
 QPushButton {
 	border-radius: 3px;
 	color: rgb(255, 255, 255);
-	border-image: url(:/STSample/Resources/images/red.png);
+	background-color: rgb(255, 103, 65);
+}
+QPushButton:hover:pressed {
+	background-color: rgb(255, 103, 65);
 }
 QPushButton:hover:!pressed {
-	border-image: url(:/STSample/Resources/images/red_focus.png);
-}
-QPushButton:hover:pressed{
-	border-image: url(:/STSample/Resources/images/red_focus.png);
+	background-color: rgb(255, 133, 103);
 }</string>
        </property>
        <property name="text">

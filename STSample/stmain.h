@@ -16,6 +16,7 @@
 #include "stchatitem.h"
 #include "xmppclient.h"
 #include "stmenu.h"
+#include "stsetting.h"
 
 using namespace tahiti;
 
@@ -40,6 +41,8 @@ namespace tahiti
 		public Q_SLOTS:
 		void on_pbChat_clicked();
 		void on_pbContact_clicked();
+		void on_pbGroup_clicked();
+		void on_pbCloud_clicked();
 		void on_pbAddContact_clicked();
 		void on_pbMessage_clicked();
 		void on_pbSetting_clicked();
@@ -83,6 +86,7 @@ namespace tahiti
 		void updateSelfPic(QString picPath);
 		void confirmExit();
 		void confirmRelogin();
+		void showSettingWindow();
 		void handleConfirmOK();
 	private:
 		Ui::STMainClass ui;

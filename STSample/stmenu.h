@@ -23,6 +23,7 @@ namespace tahiti
 	Q_SIGNALS:
 		void confirmExit();
 		void confirmRelogin();
+		void showSettingWindow();
 	private:
 		Ui::STMenuClass ui;
 

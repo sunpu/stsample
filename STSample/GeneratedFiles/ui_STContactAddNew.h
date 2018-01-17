@@ -110,21 +110,23 @@ public:
         pbSearch->setObjectName(QStringLiteral("pbSearch"));
         pbSearch->setMinimumSize(QSize(80, 30));
         pbSearch->setMaximumSize(QSize(80, 30));
-        pbSearch->setStyleSheet(QString::fromUtf8("\n"
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(10);
+        pbSearch->setFont(font1);
+        pbSearch->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
-"	width: 90;\n"
-"	height: 25;\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbSearch->setFlat(true);
 
@@ -203,10 +205,10 @@ public:
         label_22->setObjectName(QStringLiteral("label_22"));
         label_22->setMinimumSize(QSize(150, 30));
         label_22->setMaximumSize(QSize(150, 30));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221 Light"));
-        font1.setPointSize(11);
-        label_22->setFont(font1);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221 Light"));
+        font2.setPointSize(11);
+        label_22->setFont(font2);
         label_22->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_22->setAlignment(Qt::AlignCenter);
 
@@ -216,7 +218,7 @@ public:
         lblJid->setObjectName(QStringLiteral("lblJid"));
         lblJid->setMinimumSize(QSize(150, 30));
         lblJid->setMaximumSize(QSize(150, 30));
-        lblJid->setFont(font1);
+        lblJid->setFont(font2);
         lblJid->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         lblJid->setAlignment(Qt::AlignCenter);
 
@@ -242,7 +244,7 @@ public:
         label_18->setObjectName(QStringLiteral("label_18"));
         label_18->setMinimumSize(QSize(150, 30));
         label_18->setMaximumSize(QSize(150, 30));
-        label_18->setFont(font1);
+        label_18->setFont(font2);
         label_18->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_18->setAlignment(Qt::AlignCenter);
 
@@ -252,7 +254,7 @@ public:
         lblName->setObjectName(QStringLiteral("lblName"));
         lblName->setMinimumSize(QSize(150, 30));
         lblName->setMaximumSize(QSize(150, 30));
-        lblName->setFont(font1);
+        lblName->setFont(font2);
         lblName->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         lblName->setAlignment(Qt::AlignCenter);
 
@@ -278,7 +280,7 @@ public:
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setMinimumSize(QSize(150, 30));
         label_14->setMaximumSize(QSize(150, 30));
-        label_14->setFont(font1);
+        label_14->setFont(font2);
         label_14->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         label_14->setAlignment(Qt::AlignCenter);
 
@@ -288,7 +290,7 @@ public:
         lblSubscription->setObjectName(QStringLiteral("lblSubscription"));
         lblSubscription->setMinimumSize(QSize(150, 30));
         lblSubscription->setMaximumSize(QSize(150, 30));
-        lblSubscription->setFont(font1);
+        lblSubscription->setFont(font2);
         lblSubscription->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         lblSubscription->setAlignment(Qt::AlignCenter);
 
@@ -315,21 +317,20 @@ public:
         pbAddNew->setObjectName(QStringLiteral("pbAddNew"));
         pbAddNew->setMinimumSize(QSize(120, 30));
         pbAddNew->setMaximumSize(QSize(120, 30));
-        pbAddNew->setStyleSheet(QString::fromUtf8("\n"
+        pbAddNew->setFont(font1);
+        pbAddNew->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
-"	width: 90;\n"
-"	height: 25;\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbAddNew->setFlat(true);
 

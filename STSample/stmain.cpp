@@ -33,6 +33,8 @@ STMain::STMain(XmppClient* client) : m_xmppClient(client)
 	m_menu = new STMenu(this);
 	connect(m_menu, SIGNAL(confirmExit()), this, SLOT(confirmExit()));
 	connect(m_menu, SIGNAL(confirmRelogin()), this, SLOT(confirmRelogin()));
+	connect(m_menu, SIGNAL(showSettingWindow()), this, SLOT(showSettingWindow()));
+	
 	m_menu->hide();
 	m_confirm = new STConfirm(this);
 	connect(m_confirm, SIGNAL(confirmOK()), this, SLOT(handleConfirmOK()));
@@ -89,7 +91,7 @@ void STMain::initChatData()
 				chatItem->setUserInfo(*friendIt);
 				m_chatItemList.push_back(chatItem);
 
-				chatDetail = new STChatDetail(m_xmppClient);
+				chatDetail = new STChatDetail(m_xmppClient, this);
 				chatDetail->setChatDetail(*friendIt);
 				connect(chatDetail, SIGNAL(changeChatListOrder(QString)), this, SLOT(reorderChatList(QString)));
 				m_chatDetailList.push_back(chatDetail);
@@ -344,7 +346,7 @@ void STMain::newChat(QString jid)
 			chatItem->setUserInfo(*friendIt);
 			m_chatItemList.push_front(chatItem);
 
-			chatDetail = new STChatDetail(m_xmppClient);
+			chatDetail = new STChatDetail(m_xmppClient, this);
 			chatDetail->setChatDetail(*friendIt);
 			connect(chatDetail, SIGNAL(changeChatListOrder(QString)), this, SLOT(reorderChatList(QString)));
 			m_chatDetailList.push_back(chatDetail);
@@ -430,6 +432,18 @@ void STMain::confirmRelogin()
 	m_confirm->exec();
 }
 
+void STMain::showSettingWindow()
+{
+	STSetting* settingWindow = new STSetting(this);
+	int parentX = geometry().x();
+	int parentY = geometry().y();
+	int parentWidth = geometry().width();
+	int parentHeight = geometry().height();
+	settingWindow->move(QPoint(parentX + (parentWidth - settingWindow->width()) / 2,
+		parentY + (parentHeight - settingWindow->height()) / 2));
+	settingWindow->exec();
+}
+
 void STMain::handleConfirmOK()
 {
 	if (m_confirmMode == "exit")
@@ -461,6 +475,10 @@ void STMain::on_pbChat_clicked()
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat_on.png);}");
 	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/contact_focus.png);}");
+	ui.pbGroup->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/group.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/group_focus.png);}");
+	ui.pbCloud->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/cloud.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/cloud_focus.png);}");
 	ui.widTitle->setStyleSheet("QWidget#widTitle{border-bottom:1px solid #e3e3e3;"
 		"border-top:1px solid #e3e3e3;border-right:1px solid #e3e3e3;background-color:#ffffff;}");
 	if (ui.lwChatList->selectedItems().size() > 0)
@@ -474,13 +492,45 @@ void STMain::on_pbContact_clicked()
 {
 	ui.swMain->setCurrentIndex(1);
 	ui.widSearch->setVisible(true);
-	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact_on.png);}");
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/chat_focus.png);}");
+	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact_on.png);}");
+	ui.pbGroup->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/group.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/group_focus.png);}");
+	ui.pbCloud->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/cloud.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/cloud_focus.png);}");
 	if (ui.lwContactList->selectedItems().size() > 0 && !ui.widContactAddNew->isVisible())
 	{
 		ui.widTitle->setStyleSheet("QWidget{border:0px;background-color:#434555;}");
 	}
+	ui.lblChatTitle->clear();
+}
+
+void STMain::on_pbGroup_clicked()
+{
+	ui.swMain->setCurrentIndex(3);
+	ui.widSearch->setVisible(true);
+	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/chat_focus.png);}");
+	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/contact_focus.png);}");
+	ui.pbGroup->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/group_on.png);}");
+	ui.pbCloud->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/cloud.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/cloud_focus.png);}");
+	ui.lblChatTitle->clear();
+}
+
+void STMain::on_pbCloud_clicked()
+{
+	ui.swMain->setCurrentIndex(4);
+	ui.widSearch->setVisible(true);
+	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/chat_focus.png);}");
+	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/contact_focus.png);}");
+	ui.pbGroup->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/group.png);}"
+		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/group_focus.png);}");
+	ui.pbCloud->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/cloud_on.png);}");
 	ui.lblChatTitle->clear();
 }
 

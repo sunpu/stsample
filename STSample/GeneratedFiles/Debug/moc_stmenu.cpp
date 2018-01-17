@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_tahiti__STMenu_t {
-    QByteArrayData data[4];
-    char stringdata0[43];
+    QByteArrayData data[5];
+    char stringdata0[61];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,10 +32,12 @@ static const qt_meta_stringdata_tahiti__STMenu_t qt_meta_stringdata_tahiti__STMe
 QT_MOC_LITERAL(0, 0, 14), // "tahiti::STMenu"
 QT_MOC_LITERAL(1, 15, 11), // "confirmExit"
 QT_MOC_LITERAL(2, 27, 0), // ""
-QT_MOC_LITERAL(3, 28, 14) // "confirmRelogin"
+QT_MOC_LITERAL(3, 28, 14), // "confirmRelogin"
+QT_MOC_LITERAL(4, 43, 17) // "showSettingWindow"
 
     },
-    "tahiti::STMenu\0confirmExit\0\0confirmRelogin"
+    "tahiti::STMenu\0confirmExit\0\0confirmRelogin\0"
+    "showSettingWindow"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,18 +47,20 @@ static const uint qt_meta_data_tahiti__STMenu[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x06 /* Public */,
-       3,    0,   25,    2, 0x06 /* Public */,
+       1,    0,   29,    2, 0x06 /* Public */,
+       3,    0,   30,    2, 0x06 /* Public */,
+       4,    0,   31,    2, 0x06 /* Public */,
 
  // signals: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -71,6 +75,7 @@ void tahiti::STMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->confirmExit(); break;
         case 1: _t->confirmRelogin(); break;
+        case 2: _t->showSettingWindow(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -87,6 +92,13 @@ void tahiti::STMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             typedef void (STMenu::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&STMenu::confirmRelogin)) {
                 *result = 1;
+                return;
+            }
+        }
+        {
+            typedef void (STMenu::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&STMenu::showSettingWindow)) {
+                *result = 2;
                 return;
             }
         }
@@ -119,13 +131,13 @@ int tahiti::STMenu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }
@@ -140,5 +152,11 @@ void tahiti::STMenu::confirmExit()
 void tahiti::STMenu::confirmRelogin()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
+}
+
+// SIGNAL 2
+void tahiti::STMenu::showSettingWindow()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

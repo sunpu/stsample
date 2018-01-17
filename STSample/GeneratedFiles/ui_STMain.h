@@ -41,6 +41,8 @@ public:
     QGridLayout *gridLayout;
     QPushButton *pbChat;
     QPushButton *pbContact;
+    QPushButton *pbGroup;
+    QPushButton *pbCloud;
     QSpacerItem *verticalSpacer_5;
     QWidget *widget_6;
     QGridLayout *gridLayout_2;
@@ -188,6 +190,34 @@ public:
 "}"));
 
         gridLayout->addWidget(pbContact, 1, 0, 1, 1);
+
+        pbGroup = new QPushButton(widget_5);
+        pbGroup->setObjectName(QStringLiteral("pbGroup"));
+        pbGroup->setMinimumSize(QSize(30, 30));
+        pbGroup->setMaximumSize(QSize(30, 30));
+        pbGroup->setStyleSheet(QLatin1String("\n"
+"QPushButton {\n"
+"	border-image: url(:/STSample/Resources/images/group.png);\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"	border-image: url(:/STSample/Resources/images/group_focus.png);\n"
+"}"));
+
+        gridLayout->addWidget(pbGroup, 3, 0, 1, 1);
+
+        pbCloud = new QPushButton(widget_5);
+        pbCloud->setObjectName(QStringLiteral("pbCloud"));
+        pbCloud->setMinimumSize(QSize(32, 28));
+        pbCloud->setMaximumSize(QSize(32, 28));
+        pbCloud->setStyleSheet(QLatin1String("\n"
+"QPushButton {\n"
+"	border-image: url(:/STSample/Resources/images/cloud.png);\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"	border-image: url(:/STSample/Resources/images/cloud_focus.png);\n"
+"}"));
+
+        gridLayout->addWidget(pbCloud, 4, 0, 1, 1);
 
 
         verticalLayout->addWidget(widget_5);
@@ -679,6 +709,8 @@ public:
         pbContact->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
         pbContact->setText(QString());
+        pbGroup->setText(QString());
+        pbCloud->setText(QString());
         pbMessage->setText(QString());
         pbSetting->setText(QString());
         leContactSearch->setText(QString());

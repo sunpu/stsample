@@ -338,16 +338,20 @@ public:
         pbRegist->setObjectName(QStringLiteral("pbRegist"));
         pbRegist->setMinimumSize(QSize(0, 35));
         pbRegist->setMaximumSize(QSize(16777215, 35));
-        pbRegist->setStyleSheet(QString::fromUtf8("\n"
+        pbRegist->setFont(font3);
+        pbRegist->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	font:11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
 
         horizontalLayout_4->addWidget(pbRegist);

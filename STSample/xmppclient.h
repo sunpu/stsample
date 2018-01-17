@@ -80,7 +80,7 @@ namespace tahiti
 		virtual ~XmppClient();
 		static void* longConnectProc(void* args);
 		static void* keepaliveProc(void* args);
-		void setXmppAccount(QString user, QString passwd, QString server);
+		void setXmppAccount(QString user, QString passwd, QString server, QString port);
 		void run();
 		void login();
 		void logout();
@@ -156,6 +156,7 @@ namespace tahiti
 		QString m_xmppUser;
 		QString m_xmppPasswd;
 		QString m_xmppServerIP;
+		int m_xmppServerPort;
 		string m_xmppID;
 		QString m_xmppTempPasswd;
 		string m_xmppKeepalive;

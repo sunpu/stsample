@@ -9,6 +9,7 @@ namespace tahiti
 #define CONFIG_PATH "config/"
 #define RECORD_PATH "record/"
 #define AVATAR_PATH "avatar/"
+#define TMP_PATH "tmp/"
 
 #define CONFIG_FILE_NAME "st.ini"
 

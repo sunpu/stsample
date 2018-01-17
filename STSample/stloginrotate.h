@@ -8,6 +8,7 @@
 #include <QMouseEvent>
 #include "ui_STLogin.h"
 #include "ui_STRegist.h"
+#include "ui_STServerConfig.h"
 #include "xmppclient.h"
 #include "xmppregister.h"
 #include "stconfig.h"
@@ -31,6 +32,7 @@ namespace tahiti
 		public Q_SLOTS:
 		void onUserNameChanged();
 		void on_pbLogin_clicked();
+		void on_pb2Config_clicked();
 		void on_pb2Regist_clicked();
 		void on_pbMinimum_clicked();
 		void on_pbClose_clicked();
@@ -42,7 +44,7 @@ namespace tahiti
 		virtual void mouseReleaseEvent(QMouseEvent* event);
 		bool eventFilter(QObject *obj, QEvent *e);
 	Q_SIGNALS:
-		void rotateWindow();
+		void rotateWindow(int index);
 		void changeMainWindow();
 	private:
 		Ui::STLoginClass ui;
@@ -75,12 +77,39 @@ namespace tahiti
 		virtual void mouseReleaseEvent(QMouseEvent* event);
 		bool eventFilter(QObject *obj, QEvent *e);
 	Q_SIGNALS:
-		void rotateWindow();
+		void rotateWindow(int index);
 	private:
 		Ui::STRegistClass ui;
 		bool m_isPressed;
 		QPoint m_startMovePos;
 		XmppRegister* m_xmppRegister;
+
+	};
+
+	class STServerConfig : public QWidget
+	{
+		Q_OBJECT
+
+	public:
+		STServerConfig(QWidget* parent = 0);
+		~STServerConfig();
+		void initServerConfigData();
+		public Q_SLOTS:
+		void on_pb2Login_clicked();
+		void on_pbConfirm_clicked();
+		void on_pbMinimum_clicked();
+		void on_pbClose_clicked();
+	protected:
+		virtual void mouseMoveEvent(QMouseEvent* event);
+		virtual void mousePressEvent(QMouseEvent* event);
+		virtual void mouseReleaseEvent(QMouseEvent* event);
+		bool eventFilter(QObject *obj, QEvent *e);
+	Q_SIGNALS:
+		void rotateWindow(int index);
+	private:
+		Ui::STServerConfigClass ui;
+		bool m_isPressed;
+		QPoint m_startMovePos;
 
 	};
 
@@ -102,7 +131,7 @@ namespace tahiti
 		void onChangeMainWindow();
 		void onChangeLoginWindow();
 		// 开始旋转窗口;
-		void onRotateWindow();
+		void onRotateWindow(int index);
 		// 窗口旋转结束;
 		void onRotateFinished();
 
@@ -113,6 +142,8 @@ namespace tahiti
 		STLogin* m_loginWindow;
 		// 注册窗口
 		STRegist* m_registWindow;
+		// 服务器配置窗口
+		STServerConfig* m_serverConfigWindow;
 		int m_nextPageIndex;
 
 		STMain* m_mainWindow;

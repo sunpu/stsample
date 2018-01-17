@@ -138,18 +138,20 @@ public:
         pbUpload->setObjectName(QStringLiteral("pbUpload"));
         pbUpload->setMinimumSize(QSize(120, 30));
         pbUpload->setMaximumSize(QSize(120, 30));
-        QFont font1;
-        font1.setPointSize(10);
-        pbUpload->setFont(font1);
+        pbUpload->setFont(font);
         pbUpload->setStyleSheet(QLatin1String("\n"
 "\n"
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
-"QPushButton:hover {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
         pbUpload->setFlat(false);
 
@@ -164,10 +166,10 @@ public:
 
         label_4 = new QLabel(widget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(8);
-        label_4->setFont(font2);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(8);
+        label_4->setFont(font1);
         label_4->setStyleSheet(QStringLiteral("color: rgb(181, 181, 181);"));
         label_4->setAlignment(Qt::AlignCenter);
 
@@ -198,10 +200,10 @@ public:
 
         label_2 = new QLabel(widget_3);
         label_2->setObjectName(QStringLiteral("label_2"));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(11);
-        label_2->setFont(font3);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setPointSize(11);
+        label_2->setFont(font2);
         label_2->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_2->addWidget(label_2);
@@ -249,13 +251,14 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
 
         hblayout->addWidget(pbOK);
@@ -270,13 +273,13 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/red.png);\n"
+"	background-color: rgb(255, 103, 65);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(255, 103, 65);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
+"	background-color: rgb(255, 133, 103);\n"
 "}"));
 
         hblayout->addWidget(pbCancel);

@@ -67,6 +67,10 @@ void STContactAddNew::onContactFoundResult(int result, QVariant dataVar)
 void STContactAddNew::on_pbSearch_clicked()
 {
 	QString jid = ui.leContactJid->text();
+	if (jid.length() == 0)
+	{
+		return;
+	}
 	QList<UserInfo> friendList = m_xmppClient->getRoster();
 	QList<UserInfo>::iterator it;
 	for (it = friendList.begin(); it != friendList.end(); it++)

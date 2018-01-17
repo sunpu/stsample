@@ -143,13 +143,14 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
 
         hblayout->addWidget(pbOK);
@@ -164,13 +165,13 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/red.png);\n"
+"	background-color: rgb(255, 103, 65);\n"
+"}\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(255, 103, 65);\n"
 "}\n"
 "QPushButton:hover:!pressed {\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
-"}\n"
-"QPushButton:hover:pressed{\n"
-"	border-image: url(:/STSample/Resources/images/red_focus.png);\n"
+"	background-color: rgb(255, 133, 103);\n"
 "}"));
 
         hblayout->addWidget(pbCancel);
@@ -182,9 +183,6 @@ public:
 
         verticalLayout->addLayout(hblayout);
 
-        widTitle->raise();
-        widget->raise();
-        lblText->raise();
 
         retranslateUi(STConfirmClass);
 

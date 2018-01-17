@@ -13,13 +13,15 @@ XmppRegister::~XmppRegister()
 }
 
 /* ÕËºÅ×¢²á */
-void XmppRegister::registAccount(QString user, QString passwd, QString server)
+void XmppRegister::registAccount(QString user, QString passwd, QString server, QString port)
 {
 	m_xmppUser = user;
 	m_xmppPasswd = passwd;
 	m_xmppServerIP = server;
+	m_xmppServerPort = port.toInt();
 
 	m_registClient = new Client(server.toUtf8().constData());
+	m_registClient->setPort(m_xmppServerPort);
 	m_registClient->disableRoster();
 	m_registClient->registerConnectionListener(this);
 

@@ -107,7 +107,8 @@ void STLogin::onUserNameChanged()
 void STLogin::on_pbLogin_clicked()
 {
 	QString server = STConfig::getConfig("/xmpp/server");
-	if (server.size() == 0)
+	QString port = STConfig::getConfig("/xmpp/port");
+	if (server.size() == 0 || port.size() == 0)
 	{
 		// TODO:消息提示 没有配置server
 		return;
@@ -115,7 +116,7 @@ void STLogin::on_pbLogin_clicked()
 
 	QString user = ui.leUserName->text();
 	QString passwd = ui.lePasswd->text();
-	m_xmppClient->setXmppAccount(user, passwd, server);
+	m_xmppClient->setXmppAccount(user, passwd, server, port);
 	m_xmppClient->run();
 	setLoadStatus(true);
 }
@@ -157,13 +158,14 @@ void STLogin::setLoadStatus(bool status)
 	if (status)
 	{
 		m_load->show();
-		ui.pbLogin->setStyleSheet("QPushButton{color:rgb(255, 255, 255);border-image:url(:/STSample/Resources/images/green_focus.png);}");
+		ui.pbLogin->setStyleSheet("QPushButton{border-radius:3px;color:rgb(255, 255, 255);background-color:rgb(145, 146, 155);}");
 	}
 	else
 	{
 		m_load->hide();
-		ui.pbLogin->setStyleSheet("QPushButton{color:rgb(255, 255, 255);border-image:url(:/STSample/Resources/images/green.png);}"
-			"QPushButton:hover{border-image:url(:/STSample/Resources/images/green_focus.png);}");
+		ui.pbLogin->setStyleSheet("QPushButton{border-radius:3px;color:rgb(255, 255, 255);"
+			"background-color:rgb(48, 186, 120);}QPushButton:hover:pressed{background-color:rgb(48, 186, 120);}"
+			"QPushButton:hover:!pressed{background-color:rgb(109, 206, 160);}");
 	}
 	ui.cbAutoLogin->setEnabled(!status);
 	ui.cbRemeberPasswd->setEnabled(!status);
@@ -185,7 +187,12 @@ void* STLogin::loadProc(void* args)
 
 void STLogin::on_pb2Regist_clicked()
 {
-	Q_EMIT rotateWindow();
+	Q_EMIT rotateWindow(1);
+}
+
+void STLogin::on_pb2Config_clicked()
+{
+	Q_EMIT rotateWindow(2);
 }
 
 void STLogin::on_pbMinimum_clicked()
@@ -277,7 +284,7 @@ void STRegist::handleRegistResult(bool result)
 		STConfig::setConfig("/xmpp/passwd", ui.lePasswd->text());
 
 		// 切换到登录窗口
-		Q_EMIT rotateWindow();
+		Q_EMIT rotateWindow(0);
 	}
 	else
 	{
@@ -287,13 +294,14 @@ void STRegist::handleRegistResult(bool result)
 
 void STRegist::on_pb2Login_clicked()
 {
-	Q_EMIT rotateWindow();
+	Q_EMIT rotateWindow(0);
 }
 
 void STRegist::on_pbRegist_clicked()
 {
 	QString server = STConfig::getConfig("/xmpp/server");
-	if (server.size() == 0)
+	QString port = STConfig::getConfig("/xmpp/port");
+	if (server.size() == 0 || port.size() == 0)
 	{
 		// TODO:消息提示 没有配置server
 		return;
@@ -301,7 +309,7 @@ void STRegist::on_pbRegist_clicked()
 
 	QString user = ui.leUserName->text();
 	QString passwd = ui.lePasswd->text();
-	m_xmppRegister->registAccount(user, passwd, server);
+	m_xmppRegister->registAccount(user, passwd, server, port);
 }
 
 void STRegist::on_pbMinimum_clicked()
@@ -358,6 +366,95 @@ bool STRegist::eventFilter(QObject *obj, QEvent *e)
 	return false;
 }
 
+/* 服务器配置窗口 */
+STServerConfig::STServerConfig(QWidget* parent) : QWidget(parent)
+{
+	ui.setupUi(this);
+	ui.leServerIP->installEventFilter(this);
+}
+
+STServerConfig::~STServerConfig()
+{
+
+}
+
+void STServerConfig::initServerConfigData()
+{
+	QString server = STConfig::getConfig("/xmpp/server");
+	ui.leServerIP->setText(server);
+	QString port = STConfig::getConfig("/xmpp/port");
+	if (port.size() == 0)
+	{
+		port = "5222";
+		STConfig::setConfig("/xmpp/port", port);
+	}
+	ui.leServerPort->setText(port);
+}
+
+void STServerConfig::on_pb2Login_clicked()
+{
+	Q_EMIT rotateWindow(0);
+}
+
+void STServerConfig::on_pbConfirm_clicked()
+{
+	STConfig::setConfig("/xmpp/server", ui.leServerIP->text());
+	STConfig::setConfig("/xmpp/port", ui.leServerPort->text());
+}
+
+void STServerConfig::on_pbMinimum_clicked()
+{
+	this->parentWidget()->showMinimized();
+}
+
+void STServerConfig::on_pbClose_clicked()
+{
+	this->parentWidget()->close();
+}
+
+void STServerConfig::mousePressEvent(QMouseEvent *event)
+{
+	if (event->button() == Qt::LeftButton)
+	{
+		m_isPressed = true;
+		m_startMovePos = event->globalPos();
+	}
+
+	return QWidget::mousePressEvent(event);
+}
+
+void STServerConfig::mouseMoveEvent(QMouseEvent *event)
+{
+	if (m_isPressed)
+	{
+		QPoint movePoint = event->globalPos() - m_startMovePos;
+		QPoint widgetPos = this->parentWidget()->pos() + movePoint;
+		m_startMovePos = event->globalPos();
+		this->parentWidget()->move(widgetPos.x(), widgetPos.y());
+	}
+	return QWidget::mouseMoveEvent(event);
+}
+
+void STServerConfig::mouseReleaseEvent(QMouseEvent *event)
+{
+	m_isPressed = false;
+	return QWidget::mouseReleaseEvent(event);
+}
+
+bool STServerConfig::eventFilter(QObject *obj, QEvent *e)
+{
+	if (e->type() == QEvent::KeyPress && ui.leServerIP == obj)
+	{
+		QKeyEvent *event = static_cast<QKeyEvent*>(e);
+		if (event->key() == Qt::Key_Return)
+		{
+			on_pbConfirm_clicked();
+			return true;
+		}
+	}
+	return false;
+}
+
 /* 旋转窗口 */
 STLoginRotate::STLoginRotate(XmppClient* client)
 	: m_isRoratingWindow(false)
@@ -383,20 +480,23 @@ void STLoginRotate::initRotateWindow()
 {
 	// 这里定义了两个信号，需要自己去发送信号;
 	m_loginWindow = new STLogin(m_xmppClient);
-	connect(m_loginWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
+	connect(m_loginWindow, SIGNAL(rotateWindow(int)), this, SLOT(onRotateWindow(int)));
 	connect(m_loginWindow, SIGNAL(changeMainWindow()), this, SLOT(onChangeMainWindow()));
 	m_registWindow = new STRegist();
-	connect(m_registWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
+	connect(m_registWindow, SIGNAL(rotateWindow(int)), this, SLOT(onRotateWindow(int)));
+	m_serverConfigWindow = new STServerConfig();
+	connect(m_serverConfigWindow, SIGNAL(rotateWindow(int)), this, SLOT(onRotateWindow(int)));
 
 	this->addWidget(m_loginWindow);
 	this->addWidget(m_registWindow);
+	this->addWidget(m_serverConfigWindow);
 
 	// 这里宽和高都增加，是因为在旋转过程中窗口宽和高都会变化;
 	this->setFixedSize(QSize(m_loginWindow->width() + 20, m_loginWindow->height() + 100));
 }
 
 // 开始旋转窗口;
-void STLoginRotate::onRotateWindow()
+void STLoginRotate::onRotateWindow(int index)
 {
 	// 如果窗口正在旋转，直接返回;
 	if (m_isRoratingWindow)
@@ -404,7 +504,7 @@ void STLoginRotate::onRotateWindow()
 		return;
 	}
 	m_isRoratingWindow = true;
-	m_nextPageIndex = (currentIndex() + 1) >= count() ? 0 : (currentIndex() + 1);
+	m_nextPageIndex = index;
 	QPropertyAnimation *rotateAnimation = new QPropertyAnimation(this, "rotateValue");
 	// 设置旋转持续时间;
 	rotateAnimation->setDuration(600);
@@ -428,6 +528,7 @@ void STLoginRotate::onRotateFinished()
 	repaint();
 	m_loginWindow->initLoginData();
 	m_registWindow->initRegistData();
+	m_serverConfigWindow->initServerConfigData();
 }
 
 // 绘制旋转效果;

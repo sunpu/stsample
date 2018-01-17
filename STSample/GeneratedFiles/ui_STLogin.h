@@ -38,6 +38,7 @@ public:
     QSpacerItem *horizontalSpacer_5;
     QWidget *widget_17;
     QHBoxLayout *horizontalLayout_9;
+    QPushButton *pb2Config;
     QPushButton *pbMinimum;
     QPushButton *pbClose;
     QWidget *widget_2;
@@ -125,6 +126,20 @@ public:
         horizontalLayout_9 = new QHBoxLayout(widget_17);
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         horizontalLayout_9->setContentsMargins(-1, 0, -1, 0);
+        pb2Config = new QPushButton(widget_17);
+        pb2Config->setObjectName(QStringLiteral("pb2Config"));
+        pb2Config->setMinimumSize(QSize(20, 20));
+        pb2Config->setMaximumSize(QSize(20, 20));
+        pb2Config->setStyleSheet(QLatin1String("QPushButton{\n"
+"	background: transparent;\n"
+"	border-image: url(:/STSample/Resources/images/config.png);}\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"	background-color: rgb(218, 218, 218);\n"
+"}"));
+
+        horizontalLayout_9->addWidget(pb2Config);
+
         pbMinimum = new QPushButton(widget_17);
         pbMinimum->setObjectName(QStringLiteral("pbMinimum"));
         pbMinimum->setMinimumSize(QSize(20, 20));
@@ -394,11 +409,16 @@ public:
 "QPushButton {\n"
 "	border-radius: 3px;\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-image: url(:/STSample/Resources/images/green.png);\n"
+"	background-color: rgb(48, 186, 120);\n"
 "}\n"
-"QPushButton:hover {\n"
-"	border-image: url(:/STSample/Resources/images/green_focus.png);\n"
+"QPushButton:hover:pressed {\n"
+"	background-color: rgb(48, 186, 120);\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"	\n"
+"	background-color: rgb(109, 206, 160);\n"
 "}"));
+        pbLogin->setFlat(false);
 
         horizontalLayout_4->addWidget(pbLogin);
 
@@ -451,6 +471,7 @@ public:
     {
         STLoginClass->setWindowTitle(QApplication::translate("STLoginClass", "STLogin", 0));
         label_3->setText(QApplication::translate("STLoginClass", "VMediax ST", 0));
+        pb2Config->setText(QString());
         pbMinimum->setText(QString());
         pbClose->setText(QString());
         lblUserPic->setText(QString());
