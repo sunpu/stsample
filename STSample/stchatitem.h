@@ -1,5 +1,5 @@
-﻿#ifndef STCHATITEM_H
-#define STCHATITEM_H
+﻿#ifndef _STCHATITEM_H
+#define _STCHATITEM_H
 
 #include <QWidget>
 #include "ui_STChatItem.h"

@@ -1,5 +1,5 @@
-﻿#ifndef STCHATRECORDITEM_H
-#define STCHATRECORDITEM_H
+﻿#ifndef _STCHATRECORDITEM_H
+#define _STCHATRECORDITEM_H
 
 #include <QWidget>
 #include <QStaticText>

@@ -1,5 +1,5 @@
-#ifndef STSAMPLE_H
-#define STSAMPLE_H
+#ifndef _STSAMPLE_H
+#define _STSAMPLE_H
 
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets>

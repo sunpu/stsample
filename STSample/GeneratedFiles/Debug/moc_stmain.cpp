@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_tahiti__STMain_t {
-    QByteArrayData data[27];
-    char stringdata0[489];
+    QByteArrayData data[26];
+    char stringdata0[468];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,19 +43,18 @@ QT_MOC_LITERAL(10, 177, 20), // "on_pbMinimum_clicked"
 QT_MOC_LITERAL(11, 198, 20), // "on_pbMaximum_clicked"
 QT_MOC_LITERAL(12, 219, 19), // "on_pbNormal_clicked"
 QT_MOC_LITERAL(13, 239, 18), // "on_pbClose_clicked"
-QT_MOC_LITERAL(14, 258, 20), // "on_pbRelogin_clicked"
-QT_MOC_LITERAL(15, 279, 25), // "on_lwChatList_itemClicked"
-QT_MOC_LITERAL(16, 305, 28), // "on_lwContactList_itemClicked"
-QT_MOC_LITERAL(17, 334, 34), // "on_lwContactList_itemDoubleCl..."
-QT_MOC_LITERAL(18, 369, 15), // "reorderChatList"
-QT_MOC_LITERAL(19, 385, 3), // "jid"
-QT_MOC_LITERAL(20, 389, 16), // "switchChatWindow"
-QT_MOC_LITERAL(21, 406, 13), // "updateSelfPic"
-QT_MOC_LITERAL(22, 420, 7), // "picPath"
-QT_MOC_LITERAL(23, 428, 11), // "confirmExit"
-QT_MOC_LITERAL(24, 440, 14), // "confirmRelogin"
-QT_MOC_LITERAL(25, 455, 17), // "showSettingWindow"
-QT_MOC_LITERAL(26, 473, 15) // "handleConfirmOK"
+QT_MOC_LITERAL(14, 258, 25), // "on_lwChatList_itemClicked"
+QT_MOC_LITERAL(15, 284, 28), // "on_lwContactList_itemClicked"
+QT_MOC_LITERAL(16, 313, 34), // "on_lwContactList_itemDoubleCl..."
+QT_MOC_LITERAL(17, 348, 15), // "reorderChatList"
+QT_MOC_LITERAL(18, 364, 3), // "jid"
+QT_MOC_LITERAL(19, 368, 16), // "switchChatWindow"
+QT_MOC_LITERAL(20, 385, 13), // "updateSelfPic"
+QT_MOC_LITERAL(21, 399, 7), // "picPath"
+QT_MOC_LITERAL(22, 407, 11), // "confirmExit"
+QT_MOC_LITERAL(23, 419, 14), // "confirmRelogin"
+QT_MOC_LITERAL(24, 434, 17), // "showSettingWindow"
+QT_MOC_LITERAL(25, 452, 15) // "handleConfirmOK"
 
     },
     "tahiti::STMain\0changeLoginWindow\0\0"
@@ -64,8 +63,7 @@ QT_MOC_LITERAL(26, 473, 15) // "handleConfirmOK"
     "on_pbAddContact_clicked\0on_pbMessage_clicked\0"
     "on_pbSetting_clicked\0on_pbMinimum_clicked\0"
     "on_pbMaximum_clicked\0on_pbNormal_clicked\0"
-    "on_pbClose_clicked\0on_pbRelogin_clicked\0"
-    "on_lwChatList_itemClicked\0"
+    "on_pbClose_clicked\0on_lwChatList_itemClicked\0"
     "on_lwContactList_itemClicked\0"
     "on_lwContactList_itemDoubleClicked\0"
     "reorderChatList\0jid\0switchChatWindow\0"
@@ -81,7 +79,7 @@ static const uint qt_meta_data_tahiti__STMain[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -89,31 +87,30 @@ static const uint qt_meta_data_tahiti__STMain[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  129,    2, 0x06 /* Public */,
+       1,    0,  124,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  130,    2, 0x0a /* Public */,
-       4,    0,  131,    2, 0x0a /* Public */,
-       5,    0,  132,    2, 0x0a /* Public */,
-       6,    0,  133,    2, 0x0a /* Public */,
-       7,    0,  134,    2, 0x0a /* Public */,
-       8,    0,  135,    2, 0x0a /* Public */,
-       9,    0,  136,    2, 0x0a /* Public */,
-      10,    0,  137,    2, 0x0a /* Public */,
-      11,    0,  138,    2, 0x0a /* Public */,
-      12,    0,  139,    2, 0x0a /* Public */,
-      13,    0,  140,    2, 0x0a /* Public */,
-      14,    0,  141,    2, 0x0a /* Public */,
-      15,    0,  142,    2, 0x0a /* Public */,
-      16,    0,  143,    2, 0x0a /* Public */,
-      17,    0,  144,    2, 0x0a /* Public */,
-      18,    1,  145,    2, 0x08 /* Private */,
-      20,    1,  148,    2, 0x08 /* Private */,
-      21,    1,  151,    2, 0x08 /* Private */,
-      23,    0,  154,    2, 0x08 /* Private */,
-      24,    0,  155,    2, 0x08 /* Private */,
-      25,    0,  156,    2, 0x08 /* Private */,
-      26,    0,  157,    2, 0x08 /* Private */,
+       3,    0,  125,    2, 0x0a /* Public */,
+       4,    0,  126,    2, 0x0a /* Public */,
+       5,    0,  127,    2, 0x0a /* Public */,
+       6,    0,  128,    2, 0x0a /* Public */,
+       7,    0,  129,    2, 0x0a /* Public */,
+       8,    0,  130,    2, 0x0a /* Public */,
+       9,    0,  131,    2, 0x0a /* Public */,
+      10,    0,  132,    2, 0x0a /* Public */,
+      11,    0,  133,    2, 0x0a /* Public */,
+      12,    0,  134,    2, 0x0a /* Public */,
+      13,    0,  135,    2, 0x0a /* Public */,
+      14,    0,  136,    2, 0x0a /* Public */,
+      15,    0,  137,    2, 0x0a /* Public */,
+      16,    0,  138,    2, 0x0a /* Public */,
+      17,    1,  139,    2, 0x08 /* Private */,
+      19,    1,  142,    2, 0x08 /* Private */,
+      20,    1,  145,    2, 0x08 /* Private */,
+      22,    0,  148,    2, 0x08 /* Private */,
+      23,    0,  149,    2, 0x08 /* Private */,
+      24,    0,  150,    2, 0x08 /* Private */,
+      25,    0,  151,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -133,10 +130,9 @@ static const uint qt_meta_data_tahiti__STMain[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   19,
-    QMetaType::Void, QMetaType::QString,   19,
-    QMetaType::Void, QMetaType::QString,   22,
+    QMetaType::Void, QMetaType::QString,   18,
+    QMetaType::Void, QMetaType::QString,   18,
+    QMetaType::Void, QMetaType::QString,   21,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -163,17 +159,16 @@ void tahiti::STMain::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 9: _t->on_pbMaximum_clicked(); break;
         case 10: _t->on_pbNormal_clicked(); break;
         case 11: _t->on_pbClose_clicked(); break;
-        case 12: _t->on_pbRelogin_clicked(); break;
-        case 13: _t->on_lwChatList_itemClicked(); break;
-        case 14: _t->on_lwContactList_itemClicked(); break;
-        case 15: _t->on_lwContactList_itemDoubleClicked(); break;
-        case 16: _t->reorderChatList((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 17: _t->switchChatWindow((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 18: _t->updateSelfPic((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 19: _t->confirmExit(); break;
-        case 20: _t->confirmRelogin(); break;
-        case 21: _t->showSettingWindow(); break;
-        case 22: _t->handleConfirmOK(); break;
+        case 12: _t->on_lwChatList_itemClicked(); break;
+        case 13: _t->on_lwContactList_itemClicked(); break;
+        case 14: _t->on_lwContactList_itemDoubleClicked(); break;
+        case 15: _t->reorderChatList((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 16: _t->switchChatWindow((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 17: _t->updateSelfPic((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 18: _t->confirmExit(); break;
+        case 19: _t->confirmRelogin(); break;
+        case 20: _t->showSettingWindow(); break;
+        case 21: _t->handleConfirmOK(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -214,13 +209,13 @@ int tahiti::STMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 22)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 23;
+        _id -= 22;
     }
     return _id;
 }

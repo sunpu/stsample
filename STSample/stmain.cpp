@@ -18,7 +18,7 @@ STMain::STMain(XmppClient* client) : m_xmppClient(client)
 	searchBtn->setFixedSize(13, 13);
 	searchBtn->setCursor(Qt::PointingHandCursor);
 	searchBtn->setStyleSheet("QPushButton{border-image:url(:/STSample/Resources/images/search.png);"
-		"background:transparent;cursor:pointer;}");
+		"background:transparent;}");
 	mainLayout->addWidget(searchBtn);
 	mainLayout->addStretch();
 	mainLayout->setContentsMargins(8, 0, 0, 0);
@@ -56,6 +56,9 @@ STMain::STMain(XmppClient* client) : m_xmppClient(client)
 	m_personalInfo = new STPersonalInfo(m_xmppClient);
 	connect(m_personalInfo, SIGNAL(updateSelfPic(QString)), this, SLOT(updateSelfPic(QString)));
 	ui.pgPersonalInfo->layout()->addWidget(m_personalInfo);
+
+	m_cloudFileManager = new STCloudFileManager();
+	ui.pgCloudFileWindow->layout()->addWidget(m_cloudFileManager);
 }
 
 STMain::~STMain()
@@ -452,7 +455,7 @@ void STMain::handleConfirmOK()
 	}
 	else if (m_confirmMode == "relogin")
 	{
-		on_pbRelogin_clicked();
+		Q_EMIT changeLoginWindow();
 	}
 }
 
@@ -485,6 +488,10 @@ void STMain::on_pbChat_clicked()
 	{
 		ui.lblChatTitle->setText(((STChatItem*)
 			(ui.lwChatList->itemWidget(ui.lwChatList->currentItem())))->getUserInfo().userName);
+	}
+	else
+	{
+		ui.lblChatTitle->clear();
 	}
 }
 
@@ -523,7 +530,9 @@ void STMain::on_pbGroup_clicked()
 void STMain::on_pbCloud_clicked()
 {
 	ui.swMain->setCurrentIndex(4);
-	ui.widSearch->setVisible(true);
+	ui.widSearch->setVisible(false);
+	ui.widTitle->setStyleSheet("QWidget#widTitle{border-bottom:1px solid #e3e3e3;"
+		"border-top:1px solid #e3e3e3;border-right:1px solid #e3e3e3;background-color:#ffffff;}");
 	ui.pbChat->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/chat.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/chat_focus.png);}");
 	ui.pbContact->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/contact.png);}"
@@ -531,7 +540,8 @@ void STMain::on_pbCloud_clicked()
 	ui.pbGroup->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/group.png);}"
 		"QPushButton:hover:!pressed{border-image:url(:/STSample/Resources/images/group_focus.png);}");
 	ui.pbCloud->setStyleSheet("QPushButton{border-image: url(:/STSample/Resources/images/cloud_on.png);}");
-	ui.lblChatTitle->clear();
+	ui.lblChatTitle->setText(QStringLiteral("我的云盘"));
+	m_cloudFileManager->initCloudFileView();
 }
 
 void STMain::on_pbAddContact_clicked()
@@ -584,11 +594,6 @@ void STMain::on_pbNormal_clicked()
 void STMain::on_pbClose_clicked()
 {
 	confirmExit();
-}
-
-void STMain::on_pbRelogin_clicked()
-{
-	Q_EMIT changeLoginWindow();
 }
 
 void STMain::mousePressEvent(QMouseEvent* event)

@@ -1,5 +1,5 @@
-#ifndef MASKLABEL_H
-#define MASKLABEL_H
+#ifndef _MASKLABEL_H
+#define _MASKLABEL_H
 
 #include <QLabel>
 
@@ -11,4 +11,4 @@ public:
 protected:
 	void paintEvent(QPaintEvent *);
 };
-#endif // MASKLABEL_H
+#endif

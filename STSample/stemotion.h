@@ -1,5 +1,5 @@
-﻿#ifndef STEMOTION_H
-#define STEMOTION_H
+﻿#ifndef _STEMOTION_H
+#define _STEMOTION_H
 
 #include <QWidget>
 #include <QLabel>

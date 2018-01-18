@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -116,6 +117,14 @@ public:
     QHBoxLayout *horizontalLayout_14;
     QWidget *pgPersonalInfo;
     QHBoxLayout *horizontalLayout_17;
+    QWidget *pgGroupWindow;
+    QLabel *label_3;
+    QWidget *widget_2;
+    QHBoxLayout *horizontalLayout_18;
+    QCheckBox *checkBox;
+    QPushButton *pushButton;
+    QWidget *pgCloudFileWindow;
+    QHBoxLayout *horizontalLayout_2;
 
     void setupUi(QWidget *STMainClass)
     {
@@ -207,8 +216,8 @@ public:
 
         pbCloud = new QPushButton(widget_5);
         pbCloud->setObjectName(QStringLiteral("pbCloud"));
-        pbCloud->setMinimumSize(QSize(32, 28));
-        pbCloud->setMaximumSize(QSize(32, 28));
+        pbCloud->setMinimumSize(QSize(32, 25));
+        pbCloud->setMaximumSize(QSize(32, 25));
         pbCloud->setStyleSheet(QLatin1String("\n"
 "QPushButton {\n"
 "	border-image: url(:/STSample/Resources/images/cloud.png);\n"
@@ -682,6 +691,40 @@ public:
         horizontalLayout_17 = new QHBoxLayout(pgPersonalInfo);
         horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
         swMain->addWidget(pgPersonalInfo);
+        pgGroupWindow = new QWidget();
+        pgGroupWindow->setObjectName(QStringLiteral("pgGroupWindow"));
+        label_3 = new QLabel(pgGroupWindow);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(460, 250, 54, 12));
+        widget_2 = new QWidget(pgGroupWindow);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        widget_2->setGeometry(QRect(130, 300, 781, 41));
+        horizontalLayout_18 = new QHBoxLayout(widget_2);
+        horizontalLayout_18->setSpacing(0);
+        horizontalLayout_18->setObjectName(QStringLiteral("horizontalLayout_18"));
+        horizontalLayout_18->setSizeConstraint(QLayout::SetDefaultConstraint);
+        horizontalLayout_18->setContentsMargins(0, 0, 0, 0);
+        checkBox = new QCheckBox(widget_2);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setMaximumSize(QSize(20, 20));
+
+        horizontalLayout_18->addWidget(checkBox);
+
+        pushButton = new QPushButton(widget_2);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        horizontalLayout_18->addWidget(pushButton);
+
+        swMain->addWidget(pgGroupWindow);
+        pgCloudFileWindow = new QWidget();
+        pgCloudFileWindow->setObjectName(QStringLiteral("pgCloudFileWindow"));
+        pgCloudFileWindow->setStyleSheet(QLatin1String("QWidget#pgCloudFileWindow{background-color: rgb(255, 255, 255);border-bottom: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;border-left: 1px solid #e3e3e3;}\n"
+""));
+        horizontalLayout_2 = new QHBoxLayout(pgCloudFileWindow);
+        horizontalLayout_2->setSpacing(0);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        swMain->addWidget(pgCloudFileWindow);
 
         verticalLayout_4->addWidget(swMain);
 
@@ -726,6 +769,9 @@ public:
         lblFriend->setText(QApplication::translate("STMainClass", "\345\245\275\345\217\213", 0));
         lblFriendNum->setText(QString());
         label->setText(QString());
+        label_3->setText(QApplication::translate("STMainClass", "\347\255\211\345\276\205\343\200\202\343\200\202\343\200\202", 0));
+        checkBox->setText(QApplication::translate("STMainClass", "CheckBox", 0));
+        pushButton->setText(QApplication::translate("STMainClass", "PushButton", 0));
     } // retranslateUi
 
 };

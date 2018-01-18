@@ -86,5 +86,17 @@
         <file>Resources/images/group_focus.png</file>
         <file>Resources/images/group_on.png</file>
         <file>Resources/images/group.png</file>
+        <file>Resources/images/filemove.png</file>
+        <file>Resources/images/filecopy.png</file>
+        <file>Resources/images/filedel.png</file>
+        <file>Resources/images/filenew.png</file>
+        <file>Resources/images/fileupload.png</file>
+        <file>Resources/images/video.png</file>
+        <file>Resources/images/txt.png</file>
+        <file>Resources/images/pic.png</file>
+        <file>Resources/images/pdf.png</file>
+        <file>Resources/images/doc.png</file>
+        <file>Resources/images/folder.png</file>
+        <file>Resources/images/ppt.png</file>
     </qresource>
 </RCC>

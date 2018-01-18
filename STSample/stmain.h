@@ -13,6 +13,7 @@
 #include "stcontactdetail.h"
 #include "stcontactaddnew.h"
 #include "stpersonalinfo.h"
+#include "stcloudfilemanager.h"
 #include "stchatitem.h"
 #include "xmppclient.h"
 #include "stmenu.h"
@@ -50,7 +51,6 @@ namespace tahiti
 		void on_pbMaximum_clicked();
 		void on_pbNormal_clicked();
 		void on_pbClose_clicked();
-		void on_pbRelogin_clicked();
 		void on_lwChatList_itemClicked();
 		void on_lwContactList_itemClicked();
 		void on_lwContactList_itemDoubleClicked();
@@ -108,6 +108,7 @@ namespace tahiti
 		QList<STContactItem*> m_contactItemList;
 		STContactDetail* m_contactDetail;
 		STPersonalInfo* m_personalInfo;
+		STCloudFileManager* m_cloudFileManager;
 		STMenu* m_menu;
 		STConfirm* m_confirm;
 		QString m_confirmMode;

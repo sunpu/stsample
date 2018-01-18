@@ -1,5 +1,5 @@
-#ifndef LOGGER_H
-#define LOGGER_H
+#ifndef _LOGGER_H
+#define _LOGGER_H
 
 //#include "log4cplus/loglevel.h"
 //#include "log4cplus/ndc.h" 

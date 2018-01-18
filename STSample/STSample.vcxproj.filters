@@ -236,6 +236,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_stemotion.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="stcloudfilemanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_stcloudfilemanager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_stcloudfilemanager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="stsample.h">
@@ -367,6 +376,12 @@
     <CustomBuild Include="stemotion.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="STCloudFileManager.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="stcloudfilemanager.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="token.h">
@@ -442,6 +457,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_STEmotion.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_STCloudFileManager.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

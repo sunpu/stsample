@@ -1,5 +1,5 @@
-﻿#ifndef STCHATDETAIL_H
-#define STCHATDETAIL_H
+﻿#ifndef _STCHATDETAIL_H
+#define _STCHATDETAIL_H
 
 #include <QWidget>
 #include <QTime>

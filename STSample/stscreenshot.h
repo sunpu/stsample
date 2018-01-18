@@ -1,5 +1,5 @@
-#ifndef STSCREENSHOT_H  
-#define STSCREENSHOT_H  
+#ifndef _STSCREENSHOT_H  
+#define _STSCREENSHOT_H  
 
 #include <memory>
 #include <QRect>
