@@ -1793,3 +1793,18 @@
 2018/01/18 19:20:03,524.000[xmppclient.cpp:279][INFO]:connect server success!
 2018/01/18 19:20:26,324.000[xmppclient.cpp:292][INFO]:disconnect server!
 2018/01/18 19:20:26,324.000[xmppclient.cpp:292][INFO]:disconnect server!
+2018/01/18 19:25:54,611.000[xmppclient.cpp:139][INFO]:jid:st1@221.226.156.109/st
+2018/01/18 19:25:54,615.000[xmppclient.cpp:240][INFO]:longConnectProc...
+2018/01/18 19:25:55,076.000[xmppclient.cpp:279][INFO]:connect server success!
+2018/01/22 14:54:06,446.000[xmppclient.cpp:139][INFO]:jid:st1@221.226.156.109/st
+2018/01/22 14:54:06,511.000[xmppclient.cpp:240][INFO]:longConnectProc...
+2018/01/22 14:54:07,008.000[xmppclient.cpp:279][INFO]:connect server success!
+2018/01/22 14:54:23,772.000[xmppclient.cpp:139][INFO]:jid:st1@221.226.156.109/st
+2018/01/22 14:54:23,777.000[xmppclient.cpp:240][INFO]:longConnectProc...
+2018/01/22 14:54:24,248.000[xmppclient.cpp:279][INFO]:connect server success!
+2018/01/22 14:55:13,509.000[xmppclient.cpp:139][INFO]:jid:st1@221.226.156.109/st
+2018/01/22 14:55:13,516.000[xmppclient.cpp:240][INFO]:longConnectProc...
+2018/01/22 14:55:13,872.000[xmppclient.cpp:279][INFO]:connect server success!
+2018/01/22 14:57:23,357.000[xmppclient.cpp:139][INFO]:jid:st1@221.226.156.109/st
+2018/01/22 14:57:23,361.000[xmppclient.cpp:240][INFO]:longConnectProc...
+2018/01/22 14:57:23,720.000[xmppclient.cpp:279][INFO]:connect server success!

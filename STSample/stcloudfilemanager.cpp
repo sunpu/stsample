@@ -136,6 +136,7 @@ QJsonArray STCloudFileManager::getCurrentQJsonArray(QJsonArray itemArray)
 
 void STCloudFileManager::makeCurrentPageTable()
 {
+	ui.twFileManager->setRowCount(0);
 	ui.twFileManager->clearContents();
 	m_tableBtnInfo.clear();
 
