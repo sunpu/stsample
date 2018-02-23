@@ -242,7 +242,7 @@
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+                  <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
                  </property>
                  <property name="alignment">
@@ -489,7 +489,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+            <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
            </property>
            <property name="alignment">
@@ -624,7 +624,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+            <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
            </property>
            <property name="alignment">
@@ -759,7 +759,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+            <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
            </property>
            <property name="alignment">
@@ -1173,7 +1173,7 @@ QPushButton:hover:!pressed {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+               <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
               </property>
               <property name="maxLength">
@@ -1301,7 +1301,7 @@ QPushButton:hover:!pressed {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+               <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
               </property>
               <property name="maxLength">
@@ -1429,7 +1429,7 @@ QPushButton:hover:!pressed {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+               <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
               </property>
               <property name="maxLength">

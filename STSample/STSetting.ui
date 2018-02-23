@@ -364,7 +364,7 @@ QTabWidget::pane{border:0px;}
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">border: 0px;border-bottom: 1px solid #e3e3e3;
+                <string notr="true">color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;
 </string>
                </property>
                <property name="maxLength">

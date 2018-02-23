@@ -98,5 +98,12 @@
         <file>Resources/images/doc.png</file>
         <file>Resources/images/folder.png</file>
         <file>Resources/images/ppt.png</file>
+        <file>Resources/images/open.png</file>
+        <file>Resources/images/fold.png</file>
+        <file>Resources/images/branch3.png</file>
+        <file>Resources/images/branch2.png</file>
+        <file>Resources/images/branch.png</file>
+        <file>Resources/images/file_unknown.png</file>
+        <file>Resources/images/file.png</file>
     </qresource>
 </RCC>

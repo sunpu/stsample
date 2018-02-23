@@ -37,9 +37,10 @@ int main(int argc, char *argv[])
 		return false;
 	}
 	QApplication a(argc, argv);
-	//STSample w;
+	STSample w;
+	w.show();
 	//STMain w;
-	STLoginRotate loginRotateWindow(xmpp_client);
-	loginRotateWindow.show();
+	//STLoginRotate loginRotateWindow(xmpp_client);
+	//loginRotateWindow.show();
 	return a.exec();
 }

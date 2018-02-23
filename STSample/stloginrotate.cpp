@@ -179,7 +179,7 @@ void* STLogin::loadProc(void* args)
 {
 	STLogin* login = (STLogin*)args;
 
-	QThread::sleep(2);
+	QThread::sleep(3);
 	// 窗口切换
 	login->changeMainWindow();
 	return NULL;
@@ -249,6 +249,7 @@ bool STLogin::eventFilter(QObject *obj, QEvent *e)
 	return false;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 /* 注册窗口 */
 STRegist::STRegist(QWidget* parent) : QWidget(parent)
 {
@@ -366,6 +367,7 @@ bool STRegist::eventFilter(QObject *obj, QEvent *e)
 	return false;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 /* 服务器配置窗口 */
 STServerConfig::STServerConfig(QWidget* parent) : QWidget(parent)
 {
@@ -455,6 +457,7 @@ bool STServerConfig::eventFilter(QObject *obj, QEvent *e)
 	return false;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 /* 旋转窗口 */
 STLoginRotate::STLoginRotate(XmppClient* client)
 	: m_isRoratingWindow(false)

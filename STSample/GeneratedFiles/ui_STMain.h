@@ -319,7 +319,7 @@ public:
         QFont font;
         font.setPointSize(11);
         leContactSearch->setFont(font);
-        leContactSearch->setStyleSheet(QStringLiteral(""));
+        leContactSearch->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
 
         horizontalLayout_4->addWidget(leContactSearch);
 

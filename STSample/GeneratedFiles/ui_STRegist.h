@@ -217,7 +217,7 @@ public:
         font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font3.setPointSize(11);
         leUserName->setFont(font3);
-        leUserName->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        leUserName->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         leUserName->setMaxLength(20);
 
@@ -265,7 +265,7 @@ public:
         lePasswd->setMinimumSize(QSize(0, 30));
         lePasswd->setMaximumSize(QSize(16777215, 30));
         lePasswd->setFont(font3);
-        lePasswd->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        lePasswd->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         lePasswd->setMaxLength(20);
         lePasswd->setEchoMode(QLineEdit::Password);
@@ -314,7 +314,7 @@ public:
         lePasswdVerify->setMinimumSize(QSize(0, 30));
         lePasswdVerify->setMaximumSize(QSize(16777215, 30));
         lePasswdVerify->setFont(font3);
-        lePasswdVerify->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        lePasswdVerify->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         lePasswdVerify->setMaxLength(20);
         lePasswdVerify->setEchoMode(QLineEdit::Password);

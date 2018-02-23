@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_tahiti__STChatDetail_t {
-    QByteArrayData data[17];
-    char stringdata0[274];
+    QByteArrayData data[18];
+    char stringdata0[294];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,25 +37,26 @@ QT_MOC_LITERAL(4, 46, 24), // "on_pbSendMessage_clicked"
 QT_MOC_LITERAL(5, 71, 20), // "on_pbEmotion_clicked"
 QT_MOC_LITERAL(6, 92, 23), // "on_pbScreenShot_clicked"
 QT_MOC_LITERAL(7, 116, 29), // "on_pbScreenShotOption_clicked"
-QT_MOC_LITERAL(8, 146, 19), // "updateOthersMessage"
-QT_MOC_LITERAL(9, 166, 3), // "msg"
-QT_MOC_LITERAL(10, 170, 12), // "onScreenshot"
-QT_MOC_LITERAL(11, 183, 25), // "onScreenshotWithoutWindow"
-QT_MOC_LITERAL(12, 209, 15), // "onChooseEmotion"
-QT_MOC_LITERAL(13, 225, 5), // "index"
-QT_MOC_LITERAL(14, 231, 18), // "onFinishScreenshot"
-QT_MOC_LITERAL(15, 250, 4), // "path"
-QT_MOC_LITERAL(16, 255, 18) // "onCancelScreenshot"
+QT_MOC_LITERAL(8, 146, 19), // "on_pbLesson_clicked"
+QT_MOC_LITERAL(9, 166, 19), // "updateOthersMessage"
+QT_MOC_LITERAL(10, 186, 3), // "msg"
+QT_MOC_LITERAL(11, 190, 12), // "onScreenshot"
+QT_MOC_LITERAL(12, 203, 25), // "onScreenshotWithoutWindow"
+QT_MOC_LITERAL(13, 229, 15), // "onChooseEmotion"
+QT_MOC_LITERAL(14, 245, 5), // "index"
+QT_MOC_LITERAL(15, 251, 18), // "onFinishScreenshot"
+QT_MOC_LITERAL(16, 270, 4), // "path"
+QT_MOC_LITERAL(17, 275, 18) // "onCancelScreenshot"
 
     },
     "tahiti::STChatDetail\0changeChatListOrder\0"
     "\0jid\0on_pbSendMessage_clicked\0"
     "on_pbEmotion_clicked\0on_pbScreenShot_clicked\0"
     "on_pbScreenShotOption_clicked\0"
-    "updateOthersMessage\0msg\0onScreenshot\0"
-    "onScreenshotWithoutWindow\0onChooseEmotion\0"
-    "index\0onFinishScreenshot\0path\0"
-    "onCancelScreenshot"
+    "on_pbLesson_clicked\0updateOthersMessage\0"
+    "msg\0onScreenshot\0onScreenshotWithoutWindow\0"
+    "onChooseEmotion\0index\0onFinishScreenshot\0"
+    "path\0onCancelScreenshot"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,7 +66,7 @@ static const uint qt_meta_data_tahiti__STChatDetail[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -73,19 +74,20 @@ static const uint qt_meta_data_tahiti__STChatDetail[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   69,    2, 0x06 /* Public */,
+       1,    1,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   72,    2, 0x0a /* Public */,
-       5,    0,   73,    2, 0x0a /* Public */,
-       6,    0,   74,    2, 0x0a /* Public */,
-       7,    0,   75,    2, 0x0a /* Public */,
-       8,    2,   76,    2, 0x0a /* Public */,
-      10,    0,   81,    2, 0x0a /* Public */,
-      11,    0,   82,    2, 0x0a /* Public */,
-      12,    1,   83,    2, 0x0a /* Public */,
-      14,    1,   86,    2, 0x0a /* Public */,
-      16,    0,   89,    2, 0x0a /* Public */,
+       4,    0,   77,    2, 0x0a /* Public */,
+       5,    0,   78,    2, 0x0a /* Public */,
+       6,    0,   79,    2, 0x0a /* Public */,
+       7,    0,   80,    2, 0x0a /* Public */,
+       8,    0,   81,    2, 0x0a /* Public */,
+       9,    2,   82,    2, 0x0a /* Public */,
+      11,    0,   87,    2, 0x0a /* Public */,
+      12,    0,   88,    2, 0x0a /* Public */,
+      13,    1,   89,    2, 0x0a /* Public */,
+      15,    1,   92,    2, 0x0a /* Public */,
+      17,    0,   95,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -95,11 +97,12 @@ static const uint qt_meta_data_tahiti__STChatDetail[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,    3,    9,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,    3,   10,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   13,
-    QMetaType::Void, QMetaType::QString,   15,
+    QMetaType::Void, QMetaType::Int,   14,
+    QMetaType::Void, QMetaType::QString,   16,
     QMetaType::Void,
 
        0        // eod
@@ -116,12 +119,13 @@ void tahiti::STChatDetail::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 2: _t->on_pbEmotion_clicked(); break;
         case 3: _t->on_pbScreenShot_clicked(); break;
         case 4: _t->on_pbScreenShotOption_clicked(); break;
-        case 5: _t->updateOthersMessage((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 6: _t->onScreenshot(); break;
-        case 7: _t->onScreenshotWithoutWindow(); break;
-        case 8: _t->onChooseEmotion((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 9: _t->onFinishScreenshot((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 10: _t->onCancelScreenshot(); break;
+        case 5: _t->on_pbLesson_clicked(); break;
+        case 6: _t->updateOthersMessage((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 7: _t->onScreenshot(); break;
+        case 8: _t->onScreenshotWithoutWindow(); break;
+        case 9: _t->onChooseEmotion((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->onFinishScreenshot((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->onCancelScreenshot(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -162,13 +166,13 @@ int tahiti::STChatDetail::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

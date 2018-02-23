@@ -33,6 +33,8 @@
 #include "gloox/messageeventfilter.h"
 #include "gloox/loghandler.h"
 #include "gloox/eventhandler.h"
+#include "gloox/mucroomhandler.h"
+#include "gloox/mucroom.h"
 #include "logger.h"
 #include "json/json.h"
 #include "pthread/pthread.h"
@@ -72,7 +74,7 @@ namespace tahiti
 	};
 
 	class XmppClient : public QObject, RegistrationHandler, RosterListener, ConnectionListener,
-		MessageSessionHandler, LogHandler, MessageEventHandler, MessageHandler, VCardHandler
+		MessageSessionHandler, LogHandler, MessageEventHandler, MessageHandler, VCardHandler, MUCRoomHandler, DiscoHandler
 	{
 		Q_OBJECT
 	public:
@@ -142,6 +144,20 @@ namespace tahiti
 		virtual void handleVCard(const JID& jid, const VCard *v);
 		virtual void handleVCardResult(VCardContext context, const JID& jid,
 			StanzaError se = StanzaErrorUndefined);
+		virtual void handleDiscoItems(const JID& /*from*/, const Disco::Items& items, int context);
+		virtual void handleDiscoInfo(const JID& /*from*/, const Disco::Info& info, int context);
+		virtual void handleDiscoError(const JID& /*from*/, const Error* /*error*/, int context);
+
+		virtual void handleMUCParticipantPresence(MUCRoom * /*room*/, const MUCRoomParticipant participant,
+			const Presence& presence);
+		virtual void handleMUCMessage(MUCRoom* /*room*/, const Message& msg, bool priv);
+		virtual void handleMUCSubject(MUCRoom * /*room*/, const std::string& nick, const std::string& subject);
+		virtual void handleMUCError(MUCRoom * /*room*/, StanzaError error);
+		virtual void handleMUCInfo(MUCRoom * /*room*/, int features, const std::string& name,
+			const DataForm* infoForm);
+		virtual void handleMUCItems(MUCRoom * /*room*/, const Disco::ItemList& items);
+		virtual void handleMUCInviteDecline(MUCRoom * /*room*/, const JID& invitee, const std::string& reason);
+		virtual bool handleMUCRoomCreation(MUCRoom *room);
 		Client* getClient();
 	private:
 		Client* m_client;

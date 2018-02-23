@@ -279,7 +279,7 @@ public:
         teChatWrite->setFont(font);
         teChatWrite->setFocusPolicy(Qt::StrongFocus);
         teChatWrite->setAutoFillBackground(false);
-        teChatWrite->setStyleSheet(QStringLiteral(""));
+        teChatWrite->setStyleSheet(QStringLiteral("color: rgb(67, 69, 85);"));
         teChatWrite->setFrameShape(QFrame::NoFrame);
         teChatWrite->setFrameShadow(QFrame::Plain);
         teChatWrite->setLineWidth(1);

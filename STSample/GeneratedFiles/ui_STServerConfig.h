@@ -209,7 +209,7 @@ public:
         font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font3.setPointSize(11);
         leServerIP->setFont(font3);
-        leServerIP->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        leServerIP->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         leServerIP->setMaxLength(20);
 
@@ -258,7 +258,7 @@ public:
         leServerPort->setMinimumSize(QSize(0, 30));
         leServerPort->setMaximumSize(QSize(16777215, 30));
         leServerPort->setFont(font3);
-        leServerPort->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        leServerPort->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         leServerPort->setMaxLength(20);
 

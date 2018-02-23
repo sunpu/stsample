@@ -284,6 +284,52 @@ void XmppClient::onConnect()
 	queryVCard(m_selfInfo.jid);
 
 	Q_EMIT loginResult(true);
+
+	m_client->disco()->getDiscoItems(JID("conference.localhost"), "", this, GetRoomItems, "");
+	//JID nick("test@conference.jabber.org/glooxmuctest");
+	//MUCRoom* room = new MUCRoom(m_client, nick, this, 0);
+}
+
+void XmppClient::handleDiscoItems(const JID& from, const Disco::Items& items, int context)
+{
+	switch (context)
+	{
+	case GetRoomItems:
+	{
+		JID nick("222@conference.localhost");
+		MUCRoom* room = new MUCRoom(m_client, nick, this, 0);
+		room->getRoomItems();
+		room->getRoomInfo();
+		break;
+	}
+	default:
+		break;
+	}
+}
+void XmppClient::handleDiscoInfo(const JID& /*from*/, const Disco::Info& info, int context)
+{
+	switch (context)
+	{
+	case GetRoomInfo:
+	{
+		break;
+	}
+	default:
+		break;
+	}
+}
+
+void XmppClient::handleDiscoError(const JID& /*from*/, const Error* /*error*/, int context)
+{
+	switch (context)
+	{
+	case GetRoomInfo:
+		break;
+	case GetRoomItems:
+		break;
+	default:
+		break;
+	}
 }
 
 /* 连接丢失 */
@@ -309,6 +355,7 @@ void XmppClient::queryRoster()
 	{
 		UserInfo info;
 		info.jid = (*it).second->jidJID().full().c_str();
+		StringList g = (*it).second->groups();
 		m_friendList.append(info);
 
 		// 获取card信息
@@ -704,6 +751,64 @@ bool XmppClient::handleUnsubscriptionRequest(const JID& jid, const string& /*msg
 void XmppClient::handleNonrosterPresence(const Presence& presence)
 {
 	printf("received presence from entity not in the roster: %s\n", presence.from().full().c_str());
+}
+
+
+void XmppClient::handleMUCParticipantPresence(MUCRoom * /*room*/, const MUCRoomParticipant participant,
+	const Presence& presence)
+{
+	if (presence.presence() == Presence::Available)
+		printf("!!!!!!!!!!!!!!!! %s is in the room, too\n", participant.nick->resource().c_str());
+	else if (presence.presence() == Presence::Unavailable)
+		printf("!!!!!!!!!!!!!!!! %s left the room\n", participant.nick->resource().c_str());
+	else
+		printf("Presence is %d of %s\n", presence.presence(), participant.nick->resource().c_str());
+}
+
+void XmppClient::handleMUCMessage(MUCRoom* /*room*/, const Message& msg, bool priv)
+{
+	printf("%s said: '%s' (history: %s, private: %s)\n", msg.from().resource().c_str(), msg.body().c_str(),
+		msg.when() ? "yes" : "no", priv ? "yes" : "no");
+}
+
+void XmppClient::handleMUCSubject(MUCRoom * /*room*/, const std::string& nick, const std::string& subject)
+{
+	if (nick.empty())
+		printf("Subject: %s\n", subject.c_str());
+	else
+		printf("%s has set the subject to: '%s'\n", nick.c_str(), subject.c_str());
+}
+
+void XmppClient::handleMUCError(MUCRoom * /*room*/, StanzaError error)
+{
+	printf("!!!!!!!!got an error: %d", error);
+}
+
+void XmppClient::handleMUCInfo(MUCRoom * /*room*/, int features, const std::string& name,
+	const DataForm* infoForm)
+{
+	//printf("features: %d, name: %s, form xml: %s\n",
+	//	features, name.c_str(), infoForm->tag()->xml().c_str());
+}
+
+void XmppClient::handleMUCItems(MUCRoom * /*room*/, const Disco::ItemList& items)
+{
+	Disco::ItemList::const_iterator it = items.begin();
+	for (; it != items.end(); ++it)
+	{
+		printf("%s -- %s is an item here\n", (*it)->jid().full().c_str(), (*it)->name().c_str());
+	}
+}
+
+void XmppClient::handleMUCInviteDecline(MUCRoom * /*room*/, const JID& invitee, const std::string& reason)
+{
+	printf("Invitee %s declined invitation. reason given: %s\n", invitee.full().c_str(), reason.c_str());
+}
+
+bool XmppClient::handleMUCRoomCreation(MUCRoom *room)
+{
+	printf("room %s didn't exist, beeing created.\n", room->name().c_str());
+	return true;
 }
 
 Client* XmppClient::getClient()

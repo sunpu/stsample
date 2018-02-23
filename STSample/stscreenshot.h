@@ -40,7 +40,6 @@ namespace tahiti
 	class SSToolbar;
 	class SSScreen;
 	class SSSizeShow;
-
 	class STScreenshot : public QWidget
 	{
 		Q_OBJECT
@@ -92,6 +91,7 @@ namespace tahiti
 		SSToolbar* m_toolbar;
 	};
 
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	class SSSizeShow : public QWidget
 	{
 		Q_OBJECT
@@ -109,6 +109,7 @@ namespace tahiti
 		QString m_info;
 	};
 
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	class SSToolbar : public QWidget
 	{
 		Q_OBJECT
@@ -129,6 +130,7 @@ namespace tahiti
 		SSScreen* screen;
 	};
 
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	class SSScreen : public QWidget
 	{
 

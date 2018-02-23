@@ -170,6 +170,11 @@ void STChatDetail::on_pbScreenShotOption_clicked()
 	m_option->show();
 }
 
+void STChatDetail::on_pbLesson_clicked()
+{
+
+}
+
 void STChatDetail::openScreenshot()
 {
 	STScreenshot* ss = new STScreenshot();
@@ -282,7 +287,7 @@ bool STChatDetail::eventFilter(QObject *obj, QEvent *e)
 	return false;
 }
 
-////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
 STScreenshotOption::STScreenshotOption(QWidget * parent) : QWidget(parent)
 {
 	ui.setupUi(this);

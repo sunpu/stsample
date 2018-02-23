@@ -142,6 +142,10 @@ void *tahiti::XmppClient::qt_metacast(const char *_clname)
         return static_cast< MessageHandler*>(const_cast< XmppClient*>(this));
     if (!strcmp(_clname, "VCardHandler"))
         return static_cast< VCardHandler*>(const_cast< XmppClient*>(this));
+    if (!strcmp(_clname, "MUCRoomHandler"))
+        return static_cast< MUCRoomHandler*>(const_cast< XmppClient*>(this));
+    if (!strcmp(_clname, "DiscoHandler"))
+        return static_cast< DiscoHandler*>(const_cast< XmppClient*>(this));
     return QObject::qt_metacast(_clname);
 }
 

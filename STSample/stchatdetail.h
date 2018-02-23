@@ -36,6 +36,7 @@ namespace tahiti
 		void on_pbEmotion_clicked();		
 		void on_pbScreenShot_clicked();
 		void on_pbScreenShotOption_clicked();
+		void on_pbLesson_clicked();
 		void updateOthersMessage(QString jid, QString msg);
 		void onScreenshot();
 		void onScreenshotWithoutWindow();
@@ -62,6 +63,7 @@ namespace tahiti
 		QWidget* m_main;
 	};
 
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	class STScreenshotOption : public QWidget
 	{
 		Q_OBJECT

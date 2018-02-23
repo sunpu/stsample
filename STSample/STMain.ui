@@ -479,7 +479,7 @@ QPushButton:hover:!pressed {
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">color: rgb(67, 69, 85);</string>
                  </property>
                  <property name="text">
                   <string/>

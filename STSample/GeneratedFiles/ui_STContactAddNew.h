@@ -101,7 +101,7 @@ public:
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(11);
         leContactJid->setFont(font);
-        leContactJid->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        leContactJid->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
 
         horizontalLayout_11->addWidget(leContactJid);

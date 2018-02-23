@@ -216,7 +216,7 @@ public:
         leServerIP->setMinimumSize(QSize(0, 30));
         leServerIP->setMaximumSize(QSize(16777215, 30));
         leServerIP->setFont(font1);
-        leServerIP->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        leServerIP->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         leServerIP->setMaxLength(20);
 

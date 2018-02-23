@@ -268,7 +268,7 @@ public:
         font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font2.setPointSize(11);
         leUserName->setFont(font2);
-        leUserName->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        leUserName->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         leUserName->setMaxLength(20);
 
@@ -316,7 +316,7 @@ public:
         lePasswd->setMinimumSize(QSize(0, 30));
         lePasswd->setMaximumSize(QSize(16777215, 30));
         lePasswd->setFont(font2);
-        lePasswd->setStyleSheet(QLatin1String("border: 0px;border-bottom: 1px solid #e3e3e3;\n"
+        lePasswd->setStyleSheet(QLatin1String("color: rgb(67, 69, 85);border: 0px;border-bottom: 1px solid #e3e3e3;\n"
 ""));
         lePasswd->setMaxLength(20);
         lePasswd->setEchoMode(QLineEdit::Password);
@@ -477,6 +477,7 @@ public:
         lblUserPic->setText(QString());
         label->setText(QApplication::translate("STLoginClass", "\343\200\200\350\264\246\343\200\200\345\217\267\343\200\200", 0));
         label_2->setText(QApplication::translate("STLoginClass", "\343\200\200\345\257\206\343\200\200\347\240\201\343\200\200", 0));
+        lePasswd->setText(QString());
         cbRemeberPasswd->setText(QApplication::translate("STLoginClass", "\350\256\260\344\275\217\345\257\206\347\240\201", 0));
         cbAutoLogin->setText(QApplication::translate("STLoginClass", "\350\207\252\345\212\250\347\231\273\345\275\225", 0));
         pbLogin->setText(QApplication::translate("STLoginClass", "\347\231\273\343\200\200\345\275\225", 0));
